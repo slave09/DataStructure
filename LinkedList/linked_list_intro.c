@@ -7,7 +7,7 @@ struct Node
 	struct Node *Next;
 }*first=NULL;
 
-Void Create(int A[],int n)
+void Create(int A[],int n)
 {
 	int i;
 	struct Node *first ,*last,*current;
@@ -21,7 +21,7 @@ Void Create(int A[],int n)
 	for(i=1;i<n;i++){
 		current=(struct Node *)malloc(sizeof(struct Node));
 
-		current->data=A[i];
+		current->Data=A[i];
 		current->Next=NULL;
 		last->Next=current;
 		last=current;
@@ -29,7 +29,18 @@ Void Create(int A[],int n)
 
 }
 
+void Display(struct Node *node)
+{
+	while(node!=NULL){
+		printf("%d ",node->Data );
+		node=node->Next;
+	}
+}
+
 int main(){
+	struct Node *node;
 	int Array[]={1,3,5,7,9};
+	Create(Array,5);
+	Display(first);
 	return 0;
 }
