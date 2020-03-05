@@ -10,7 +10,7 @@ struct Node
 void Create(int A[],int n)
 {
 	int i;
-	struct Node *first ,*last,*current;
+	struct Node *last,*current;
 
 	first =(struct Node *)malloc(sizeof(struct Node));
 
@@ -31,6 +31,7 @@ void Create(int A[],int n)
 
 void Display(struct Node *node)
 {
+	printf("Elements in the list are:\n");
 	while(node!=NULL){
 		printf("%d ",node->Data );
 		node=node->Next;
