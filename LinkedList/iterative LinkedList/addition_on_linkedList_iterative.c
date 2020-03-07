@@ -1,3 +1,11 @@
+/*
+	Author Fakhra Najm, fnajm09@gmail.com
+		Operations on singly Linked List
+		1. create
+		2. show
+		3. find max
+		4. find sum
+*/
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -5,64 +13,95 @@ struct Node
 {
 	int data;
 	struct Node *next;
-}*first=NULL;
+}*head=NULL;
 
-void Create_linkedList(int a[],int elements)
+
+/**
+ * creates a link list node
+
+ * @param value to be inserted into node
+ * @return node pointer to created node
+ */
+struct Node * createNode(int value) {
+	struct Node *node = (struct Node *)malloc(sizeof(struct Node));
+	node->data = value;
+	node->next = NULL;
+	return node;
+}
+
+/**
+ * creates a link list from given integer values
+
+ * @param values from which linked list is to be created
+ * @param length of given list of values
+ */
+void createLinkList(int values[],int length)
 {
-	struct Node *last,*current;
-	first=(struct Node *)malloc(sizeof(struct Node));
-	int i;
-	first->data=a[0];
-	first->next=NULL;
-	last=first;
+	head = createNode(values[0]);
+	struct Node *last = head, *current;
 
-	for(i=1;i<elements;i++){
-		current=(struct Node *)malloc(sizeof(struct Node));
-		current->data=a[i];
-		current->next=NULL;
-		last->next=current;
-		last=current;
+	// loop over given values and insert into linked list
+	for(int i = 1; i < length; i++) {
+		current = createNode(values[i]);
+		last->next = current;
+		last = current;
 	}
 }
 
-int Add_all_elements(struct Node *node)
+/**
+ * calculates sum of values of linked list nodes
+
+ * @param head pointer to the head of linked linst
+ * @return sum calculated sum of values of ll
+ */
+int calculateSum(struct Node *head)
 {
-	int sum=0;
-	while(node!=NULL){
-		sum+=node->data;
-		node=node->next;
+	int sum = 0;
+	while(head != NULL) {
+		sum += head->data;
+		head = head->next;
 	}
-		return sum;
+	return sum;
 }
 
-void Display_linkedList(struct Node *node)
-{
-	while(node!=NULL){
-		printf("%d  ",node->data );
-		node=node->next;
+/**
+ * print values of a linked list
 
+ * @param head pointer to the head of linked linst
+ */
+void printList(struct Node *head)
+{
+	while(head != NULL) {
+		printf("%d  ",head->data );
+		head = head->next;
 	}
 }
 
-int max_element(struct Node *node)
-{
-	int max=node->data;
-	node=node->next;
-	while(node){
-		if(max<node->data)
-			max=node->data;
-		node=node->next;
-	}
+/**
+ * finds maximum value from a linked list
 
+ * @param head pointer to the head of linked linst
+ * @return max value of ll
+ */
+int findMax(struct Node *head)
+{
+	int max = head->data;
+	head = head->next;
+	// loop over ll and update max
+	while(head) {
+		if(max < head->data) max = head->data;
+		head = head->next;
+	}
 	return max;
 }
 
+
 int main()
 {
-	int array1[]={8,3,7,12,9};
-	Create_linkedList(array1,5);
-	Display_linkedList(first);
-	printf("\nThe sum of all elements of linked list=%d ",Add_all_elements(first));
-	printf("\nThe maxima of the list: %d",max_element(first));
+	int values[] = { 8, 3, 7, 12, 9 };
+	createLinkList(values, 5);
+	printList(head);
+	printf("\nThe sum of all elements of linked list = %d ",calculateSum(head));
+	printf("\nThe maxima of the list: %d",findMax(head));
 	return 0;
 }
