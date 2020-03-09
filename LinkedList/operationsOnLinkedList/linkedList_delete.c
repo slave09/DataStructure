@@ -44,8 +44,10 @@ void removeHead()
 void removeNode(struct Node *node, int value)
 {
 	struct Node * prev_node = (struct Node *)malloc(sizeof(struct Node));
+	
 	if(head->data == value)
 		removeHead();
+
 	else{
 		while(node != NULL)
 		{

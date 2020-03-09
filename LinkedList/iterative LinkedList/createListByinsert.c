@@ -21,11 +21,11 @@ void createLinkList(int value)
 	node = createNode(value);
 	if(head == NULL)
 	{
-		head = last = node ;    // all the nodes are at one since there is no other node
+		head = last = node ; // all the nodes are at one since there is no other node
 	}
 	else
 	{
-		last->next = node ;  // current node becomes the next to the previous last node
+		last->next = node ; //current node becomes the next to the previous last node
 		last = node; 		//here the current node "node" is updated as last node "last"
 	}
 }
