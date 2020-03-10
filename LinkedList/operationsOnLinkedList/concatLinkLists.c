@@ -56,6 +56,7 @@ void ShowList(struct Node * head)
     printf("%d ", head->data);
     head = head->next;
   }
+  printf("\n");
 }
 
 int main()
@@ -65,9 +66,7 @@ int main()
   createLinkList(values1, 5);
   createSecondList(values2, 3);
   ShowList(first);
-  printf("\n");
   ShowList(second);
-  printf("\n");
   joinTwoList(first, second);
   ShowList(third);
 }

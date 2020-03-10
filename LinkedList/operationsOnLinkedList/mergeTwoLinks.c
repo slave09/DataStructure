@@ -15,7 +15,7 @@ struct Node * createNode(int value)
   return node;
 }
 
-struct Node * createLinkList(int values[], int length)
+struct Node * createFirstList(int values[], int length)
 {
  first= createNode(values[0]);
  struct Node *current ,*last = first;
@@ -47,12 +47,52 @@ void ShowList(struct Node * head)
   printf("\n");
 }
 
+struct Node * mergeData(struct Node *first, struct Node *second)
+{
+  struct Node *last = NULL;
+  if(first->data > second->data){
+    third = last = second ;
+    second = second->next;
+    last->next = NULL;
+  }
+  else{
+    third = last = first;
+    first = first->next;
+    last->next = NULL;
+  }
+  while(first && second)
+  {
+    if(first->data > second->data){
+      last->next = second;
+      last = second;
+      second = second->next;
+      last->next = NULL;
+    }
+    else{
+      last->next = first;
+      last = first;
+      first = first->next;
+      last->next = NULL;
+    }
+  }
+  if(first)
+    last->next = first;
+  else
+    last->next = second;
+  return third;
+}
+
 int main()
 {
-  int values1[] = {2, 4, 6, 8, 10};
-  int values2[]= {1,3,5};
-  createLinkList(values1, 5);
-  createSecondList(values2, 3);
+  int values1[] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
+  int values2[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
+  createFirstList(values1, 10);
+  createSecondList(values2, 10);
+  printf("First Link list:\n");
   ShowList(first);
+  printf("Second Link list:\n");
   ShowList(second);
+  mergeData(first, second);
+  printf("after merge new Link list formed:\n");
+  ShowList(third);
 }
