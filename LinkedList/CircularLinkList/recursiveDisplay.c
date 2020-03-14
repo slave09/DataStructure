@@ -27,16 +27,18 @@ void createLinkList(int values[], int length){
 }
 
 void PrintList(struct Node * head){
-  head = Head;
-  do{
-    printf("%d ", head->data);
-    head = head->next;
-  }while(head != Head);
-  printf("\n");
+ static int round = 0;
+ if(head != Head || round == 0){
+  round = 1;
+  printf("%d ", head->data );
+  PrintList(head->next);
+ }
+ round = 0;
 }
 
 int main(){
   int values[] = {1, 2, 3, 4, 5};
   createLinkList(values, 5);
   PrintList(Head);
+  return 0;
 }
