@@ -6,13 +6,22 @@ struct Node{
   struct Node * next;
 }*Head;
 
+/**
+* creates the circular node
+* @param the value to be inserted into the node
+* @return node pointer to created node
+*/
 struct Node * createCircularNode(int value){
   struct Node * node = (struct Node *)malloc(sizeof(struct Node));
   node->data = value;
   node->next = node;
   return node;
 }
-
+/**
+* creates the circular linkList
+* @param value to be inserted into nodes
+* @param length of given list of values
+*/
 void createLinkList(int values[], int length){
   struct Node *last, *current;
   Head = createCircularNode(values[0]);
@@ -25,6 +34,13 @@ void createLinkList(int values[], int length){
     last = current;
   }
 }
+
+/**
+* prints values of the linkedlist recursively.
+* @param pointer to the head of the list .
+* if the last becomes head then the linkList has completed one round.
+* after one round all the list would have been printed and we have to stop. 
+*/
 
 void PrintList(struct Node * head){
  static int round = 0;
