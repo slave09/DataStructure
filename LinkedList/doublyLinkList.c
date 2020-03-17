@@ -47,6 +47,13 @@ int calculateLength(struct Node * Head){
   return length;
 }
 
+void InsertHead(struct Node * node, int value){
+  node = CreateNode(value);
+  node->next = Head;
+  Head->prev = node;
+  Head = node;
+}
+
 void InsertNode(struct Node * Head, int index, int value){
   struct Node * node = CreateNode(value);
   if(index < 0 || index > calculateLength(Head))
@@ -54,11 +61,8 @@ void InsertNode(struct Node * Head, int index, int value){
   if(index == 0){
     if (Head == NULL)
       Head = node;
-    else{
-      node->next = Head;
-      Head->prev = node;
-      Head = node;
-    }
+    else
+      InsertHead(Head, value);
   }
   else{
     for (int i = 0; i < index-1; ++i)
