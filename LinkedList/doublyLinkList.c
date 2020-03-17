@@ -3,6 +3,7 @@
   1. Create
   2. Display
   3. calculateLength
+  4. insert
 */
 
 
@@ -14,7 +15,7 @@ struct Node
   struct Node * prev;
   int data;
   struct Node * next;
-}*Head;
+}*Head ;
 
 struct Node * CreateNode(int value){
   struct Node * node = (struct Node *)malloc(sizeof(struct Node));
@@ -44,10 +45,36 @@ int calculateLength(struct Node * Head){
   }
   return length;
 }
+
+void InsertNode(struct Node * Head, int index, int value){
+  struct Node * node = CreateNode(value);
+  if(index < 0 || index > calculateLength(Head))
+    return;
+  if(index == 0){
+    if (Head == NULL)
+      Head = node;
+    else{
+      node->next = Head;
+      Head->prev = node;
+      Head = node;
+    }
+  }
+  else{
+    for (int i = 0; i < index-1; ++i)
+      Head = Head->next;
+    node->prev = Head;
+    node->next = Head->next;
+    if(Head->next)
+      Head->next->prev = node;
+    Head->next = node;
+    Head = node;
+  }
+}
+
 void PrintList(struct Node * Head)
 {
   while(Head != NULL){
-    printf("%d ", Head->data );
+    printf("%d ", Head->data);
     Head = Head->next;
   }
   printf("\n");
@@ -58,5 +85,7 @@ int main(){
   CreateLinkList(values, 5);
   PrintList(Head);
   printf("length:%d\n", calculateLength(Head) );
+  InsertNode(Head, 0, 6);
+  PrintList(Head);
   return 0;
 }
