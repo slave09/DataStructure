@@ -4,6 +4,7 @@
   2. Display
   3. calculateLength
   4. insert
+  5. Delete
 */
 
 
@@ -71,6 +72,36 @@ void InsertNode(struct Node * Head, int index, int value){
   }
 }
 
+int removeHead(struct Node * current){
+  Head = Head->next;
+  if(Head)
+    Head->prev = NULL;
+  int value = current->data;
+  free(current);
+  return value;
+}
+
+int removeValue(struct Node * Head, int index){
+  struct Node * current ;
+  int value = -1;
+  if(index < 0 || index > calculateLength(Head))
+    return -1;
+  if(index == 0){
+   value = removeHead(Head);
+  }
+
+  else{
+    for (int i = 0; i < index; ++i)
+      Head = Head->next;
+    value = Head->data;
+    Head->prev->next = Head->next;
+    if(Head->next)
+     Head->next->prev = Head->prev;
+    free(Head);
+  }
+  return value;
+}
+
 void PrintList(struct Node * Head)
 {
   while(Head != NULL){
@@ -85,7 +116,9 @@ int main(){
   CreateLinkList(values, 5);
   PrintList(Head);
   printf("length:%d\n", calculateLength(Head) );
-  InsertNode(Head, 0, 6);
+  InsertNode(Head, 5, 6);
+  PrintList(Head);
+  printf("value of the deleted node:%d\n", removeValue(Head, 0));
   PrintList(Head);
   return 0;
 }
