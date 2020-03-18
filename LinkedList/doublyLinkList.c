@@ -87,7 +87,6 @@ int removeHead(struct Node * current){
 }
 
 int removeValue(struct Node * Head, int index){
-  struct Node * current ;
   int value = -1;
   if(index < 0 || index > calculateLength(Head))
     return -1;
@@ -105,6 +104,19 @@ int removeValue(struct Node * Head, int index){
     free(Head);
   }
   return value;
+}
+
+void ReverseList(struct Node * head)
+{
+  struct Node * store ;
+  while(head){
+    store = head->next;
+    head->next = head->prev;
+    head->prev = store;
+    head = head->prev;
+    if( head != NULL && head->next == NULL)
+      Head = head;
+  }
 }
 
 void PrintList(struct Node * Head)
@@ -129,6 +141,7 @@ void PrintReverseList(struct Node * Head){
 int main(){
   int values[] = {1, 2, 3, 4, 5};
   CreateLinkList(values, 5);
+  printf("Created Link list:\n");
   PrintList(Head);
   printf("length:%d\n", calculateLength(Head) );
   InsertNode(Head, 5, 6);
@@ -137,6 +150,7 @@ int main(){
   printf("After deletion of value %d containing node:\n", removeValue(Head, 0));
   PrintList(Head);
   printf("Reverse display of the link list\n");
-  reverseList(Head);
+  ReverseList(Head);
+  PrintList(Head);
   return 0;
 }
