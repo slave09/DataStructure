@@ -5,6 +5,7 @@
   3. calculateLength
   4. insert
   5. Delete
+  6. Reverse
 */
 
 
@@ -115,14 +116,27 @@ void PrintList(struct Node * Head)
   printf("\n");
 }
 
+void PrintReverseList(struct Node * Head){
+  while(Head->next != NULL)
+    Head = Head->next;
+  while(Head){
+    printf("%d ",Head->data );
+    Head = Head->prev;
+  }
+  printf("\n");
+}
+
 int main(){
   int values[] = {1, 2, 3, 4, 5};
   CreateLinkList(values, 5);
   PrintList(Head);
   printf("length:%d\n", calculateLength(Head) );
   InsertNode(Head, 5, 6);
+  printf("New linkList:\n");
   PrintList(Head);
-  printf("value of the deleted node:%d\n", removeValue(Head, 0));
+  printf("After deletion of value %d containing node:\n", removeValue(Head, 0));
   PrintList(Head);
+  printf("Reverse display of the link list\n");
+  reverseList(Head);
   return 0;
 }
