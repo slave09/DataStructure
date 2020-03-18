@@ -1,5 +1,5 @@
 /*
-  operations on circular linkList
+  operations on singly circular linkList
   1. create
   2. display
   3. find length
