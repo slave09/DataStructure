@@ -45,7 +45,7 @@ int findLength(struct Node * node){
   return length;
 }
 
-void  insertHead(struct Node *current, int value){
+void insertHead(struct Node *current, int value){
   current = createNode(value);
   current->next = Head;
   Head->prev->next = current;
@@ -74,6 +74,28 @@ void insertNode(struct Node * Head, int index, int value ){
   }
 }
 
+int removeNode(struct Node * node, int index){
+  int removed = -1;
+  if(index > findLength(Head) || index < 0)
+    return -1;
+  if(index == 0){
+    node->prev->next = Head->next;
+    Head = Head->next;
+    Head->prev = node->prev;
+    removed = node->data;
+    free(node);
+  }
+  else{
+    for (int i = 0; i < index; ++i)
+      node = node->next;
+    node->prev->next = node->next;
+    node->next->prev = node->prev;
+    removed = node->data;
+    free(node); 
+  }
+  return removed;
+}
+
 void printList(struct Node * node){
   do{
     printf("%d ", node->data);
@@ -82,11 +104,16 @@ void printList(struct Node * node){
   printf("\n");
 }
 
+
 int main(){
   int values[] = {10, 20, 30, 40, 50}; 
   createLinkList(values, 5);
+  printf("created link list\n");
   printList(Head);
   insertNode(Head, 0 , 60);
+  printf("LinkList after insertion\n");
+  printList(Head);
+  printf("link list after deletion of node having value %d\n", removeNode(Head,0));
   printList(Head);
   return 0;
 }
