@@ -48,9 +48,10 @@ int findLength(struct Node * node){
 void  insertHead(struct Node *current, int value){
   current = createNode(value);
   current->next = Head;
-  Head->prev = current;
+  Head->prev->next = current;
   current->prev = Head->prev;
-  current = Head;
+  Head->prev = current;
+  Head = current; 
 }
 
 void insertNode(struct Node * Head, int index, int value ){
@@ -64,7 +65,7 @@ void insertNode(struct Node * Head, int index, int value ){
   }
   else{
     struct Node *node = createNode(value);
-    for (int i = 0; i < index; ++i)
+    for (int i = 0; i < index-1; ++i)
       Head = Head->next;
     node->next = Head->next;
     Head->next->prev = node;
