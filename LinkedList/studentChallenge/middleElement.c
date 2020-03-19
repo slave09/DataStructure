@@ -18,9 +18,9 @@ struct Node{
 
 struct Node * createNode(int value){
   struct Node * node = (struct Node *)malloc(sizeof(struct Node));
-  node->prev = NULL;
+  node->prev = node;
   node->data = value;
-  node->next = NULL;
+  node->next = node;
   return node;
 }
 
@@ -37,15 +37,14 @@ void createLinkList(int values[], int length){
   }
 }
 
-int findMid(struct Node * head, struct Node *last){
-  while(head->next != last->prev || head->next != last){
-    head = head->next;
-    last = last->prev; 
-  }
-  if(head->next == last->prev )
-    return head->data;
-  else 
-    return -1;
+int findMid(struct Node * Head, struct Node *last){
+ do{
+    Head = Head->next;
+    last = last->prev;
+    if(Head == last)
+      return Head->data;
+ }while(Head != head);
+ return -1;
 }
 
 void printList(struct Node * node){
@@ -57,14 +56,19 @@ void printList(struct Node * node){
 }
 
 int main(){
-  int values[5];
-  printf("Number of nodes are : 5\n");
+  int nodes;
+  printf("Enter number of nodes:\n");
+  scanf("%d", &nodes);
+  int *values = (int *)malloc(nodes*sizeof(int));
   printf("Enter all elements to be inserted in nodes\n");
-  for (int i = 0; i < 5; ++i)
+  for (int i = 0; i < nodes; ++i)
     scanf("%d", &values[i] );
-  createLinkList(values, 5);
+  createLinkList(values, nodes);
   printf("created LinkList is\n");
   printList(head);
-  printf("Middle node value = %d\n",findMid(head,head->prev) );
+  if(findMid(head, head->prev) != -1)
+    printf("Middle element:%d ",findMid(head, head->prev) );
+  else
+    printf("Number of nodes is even i.e. no middle element\n");
   return 0;
 }
