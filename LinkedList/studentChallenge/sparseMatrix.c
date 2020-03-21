@@ -12,7 +12,7 @@
 
 struct Node{
   int column;
-  int value;
+  int values;
   struct Node * next;
 };
 
@@ -21,27 +21,33 @@ struct sparse{
   struct Node *node ;
 };
 
-void createSparse(struct sparse *matrix, int rows, int cols){
-  int elements,position;
-  matrix->index = (int *)malloc(rows*sizeof(int));
-  printf("Enter number of nonzero elements\n");
-  scanf("%d", &elements);
-  for(int i = 0; i < rows; ++i)
-    matrix->index[i] = i;
-  printf("Enter all nonzero elements of the sparse matrix\n");
-  for(int i = 0; i < elements; i++){
-    scanf("%d",&position )
-    if(position == matrix->index[i]){
-      scanf("%d%d", &matrix->node->column, &matrix->node->value);
-    }
-  }
+struct Node * createNode(struct sparse *matrix, int row, int col, int element){
+  matrix->node = (struct Node *)malloc(sizeof(struct Node));
+  node->col = column;
+  node->element = value;
+  node->next = NULL;
+  return node;
+}
+
+void createSparse(struct sparse *matrix){
+ int elements, row, col, element;
+ printf("Enter number oof non-zero elements\n");
+ scanf("%d", &elements);
+ printf("Enter all non-zero elements along with its indices\n");
+ for (int i = 0; i < elements; ++i){
+   scanf("%d%d%d", &row , &col , &element);
+   createNode(&matrix, row, col, element);
+ }
 }
 
 int main(){
   struct sparse matrix;
-  int rows, cols;
-  printf("Enter dimension of the sparse matrix:\n");
+  int rows,cols;
+  printf("Enter dimension of the sparse matrix\n");
   scanf("%d%d", &rows, &cols);
-  createSparse(&matrix, rows, cols);
+  matrix.index = (int *)malloc(rows*sizeof(int));
+  for (int i = 0; i < rows; ++i)
+    matrix.index[i] = i;
+  createSparse(&matrix);
   return 0;
 }
