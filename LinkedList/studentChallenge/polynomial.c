@@ -67,8 +67,11 @@ void printTerms(struct polynomial *head_term){
 }
 
 int main(){
+	int var_value;
 	createTerm(head_term);
 	printTerms(head_term);
-	printf("Result : %d\n",evaluateTerms(head_term, 1) );
+	printf("Enter variable value:\n");
+	scanf("%d", &var_value);
+	printf("Result : %d\n",evaluateTerms(head_term, var_value) );
 	return 0;
 }
