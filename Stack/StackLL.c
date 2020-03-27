@@ -4,7 +4,7 @@
 	Stack implementation using LinkList
 	* 1. push
 	* 2. pop
-	* 3. peep
+	* 3. peek
 */
 
 #include<stdio.h>
