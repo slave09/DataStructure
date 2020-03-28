@@ -2,8 +2,13 @@
 	Author : Fakhra Najm
 	EMail  : fnajm09@gmail.com
 
-	* Applications of Stack
+	Applications of Stack
 	* 1. parenthesis matching
+	* 2. infix to postfix conversion
+	Operations:
+	* 1. checkmatch
+	* 2. isOperand
+	* 3. findPrecedence
 */
 
 #include<stdio.h>
@@ -63,24 +68,43 @@ int isEmpty(){
 	return 0;
 }
 
+// returns the value of top of stack
+
+char stackTop(){
+	if(top != NULL)
+		return top->data;
+	return -1;
+}
+
+/*
+	* checks whether correctly parenthesised or not
+	* @param expression pointer to the given expression
+	* @return true or false 
+*/
 int checkmatch(char *expression){
 	for(int i = 0; expression[i] != '\0'; i++){
-		if(expression[i] == '(')
+		if(expression[i] == '(' || expression[i] == '[' || expression[i] == '{')
 			push(expression[i]);
-		else if(expression[i] == ')'){
-			if(isEmpty() == 1)
+		else if(expression[i] == ')' || expression[i] == '}' || expression[i] == ']'){
+			if(isEmpty())
 				return 0;
-			pop();
+			else if(expression[i]-stackTop() == 1 || expression[i]-stackTop() == 2)
+				pop();
+			else
+				return 0;
 		}
 	}
-	if(isEmpty() == 1)
+	if(isEmpty())
 		return 1;
 	else
 		return 0;
 }
 
 int main(){
-	char *expression = "(a+b)*(c-d)";
-	printf("%d\n",checkmatch(expression) );
+	char *expression = "{[(a+b)]*[(c-d)]}";
+	if(checkmatch(expression))
+		printf("Balanced\n");
+	else
+		printf("unbalanced\n");
 	return 0;
 }
