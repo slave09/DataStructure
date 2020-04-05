@@ -1,6 +1,6 @@
 /*
   Author Fakhra Najm
-  Email  fnajm09@gmail.com
+  Email fnajm09@gmail.com
 */
 
 #include<stdio.h>
@@ -8,7 +8,6 @@
 
 struct Node{
   int data;
-  struct Node *top;
   struct Node *next;
 };
 
@@ -18,32 +17,32 @@ struct Queue{
 };
 
 int isEmpty(struct Node *stack){
-  if(stack->top == NULL)
+  if(stack == NULL)
     return 1;
   return 0;
 }
 
-void push(struct Node *stack, int value){
-  stack = (struct Node *)malloc(sizeof(struct Node));
-  if(stack == NULL)
-    printf("Queue is empty\n");
+void push(struct Node **stack, int value){
+  struct Node * node = (struct Node *)malloc(sizeof(struct Node));
+  if(node == NULL)
+    printf("stack is full\n");
   else{
-    stack->data = value;
-    stack->next = stack->top;
-    stack->top = stack;
+    node->data = value;
+    node->next = (*stack);
+    (*stack) = node;
   }
 }
 
-int pop(struct Node *stack){
-  int value = -1;
-  if(isEmpty(stack)){
-    printf("stack is empty");
-    return value;
+int pop(struct Node **stack){
+  int value;
+  if(isEmpty(*stack))
+    return -1;
+  else{
+    struct Node *node = (*stack);
+    *stack = node->next;
+    value = node->data;
+    free(node);
   }
-  struct Node *node = stack->top;
-  value = node->data;
-  stack->top = stack->top->next;
-  free(node);
   return value;
 }
 
@@ -54,7 +53,7 @@ void enqueue(struct Queue *queue, int value){
 int dequeue(struct Queue *queue){
   if(isEmpty(queue->stack2)){
     if(isEmpty(queue->stack1)){
-      printf("Queue is empty\n");
+      printf("queue is empty");
       return -1;
     }
     else{
@@ -66,10 +65,12 @@ int dequeue(struct Queue *queue){
 }
 
 int main(){
-  struct Queue *queue = (struct Queue *) malloc(sizeof(struct Queue));
-  queue->stack1 = NULL;
-  queue->stack2 = NULL;
+  struct Queue *queue = (struct Queue *)malloc(sizeof(struct Queue));
+  queue->stack2 = queue->stack1 = NULL;
   enqueue(queue, 10);
+  enqueue(queue, 20);
   printf("%d\n",dequeue(queue) );
+  printf("%d\n",dequeue(queue) );
+
   return 0;
 }
