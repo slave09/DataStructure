@@ -1,3 +1,11 @@
+/*
+	Author Fakhra Najm
+	Email fnajm09@gmail.com
+	***********************
+	* DEQueue implementation using array
+*/
+
+
 #include<stdio.h>
 #include<stdlib.h>
 
