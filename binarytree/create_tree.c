@@ -53,8 +53,28 @@ void preorder(struct Node *holder){
 	}
 }
 
+void postorder(struct Node *holder){
+	if(holder){
+		postorder(holder->left_child);
+		postorder(holder->right_child);
+		printf("%d ", holder->data);
+		}
+}
+
+void Inorder(struct Node *holder){
+	if(holder){
+		postorder(holder->left_child);
+		printf("%d ", holder->data);	
+		postorder(holder->right_child);
+	}
+}
+
 int main(){
 	createTree();
 	printf("Preorder tree\n");
 	preorder(root);
+	printf("\npostorder tree\n");
+	postorder(root);
+	printf("\nInorder tree\n");
+	Inorder(root);
 }

@@ -1,3 +1,5 @@
+//header file for creating tree using queue.
+
 struct Node
 {
 	struct Node *left_child;
