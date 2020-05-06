@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<stdlib.h>
 
 int main()
 {
@@ -9,11 +10,9 @@ int main()
 	p[1]=(int **)malloc(4*sizeof(int));
 	p[2]=(int **)malloc(4*sizeof(int));
     
-    for (i = 0; i < 3; ++i)
-    {
-    	for (j = 0; j < 4; ++j)
-    	{
-    		printf("%d\n",p[i][j] );
-    	}
+  for (i = 0; i < 3; ++i){
+    for (j = 0; j < 4; ++j){
+    	printf("%d\n",p[i][j] );
     }
+  }
 }
