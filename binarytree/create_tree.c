@@ -77,4 +77,6 @@ int main(){
 	postorder(root);
 	printf("\nInorder tree\n");
 	Inorder(root);
+	return 0;
+	
 }
