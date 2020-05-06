@@ -1,7 +1,3 @@
-
-#ifndef Queue_h
-#define Queue_h
-
 struct Node
 {
 	struct Node *left_child;
@@ -14,17 +10,17 @@ struct Queue
 	int size;
 	int front; 
 	int rear;  
-	Node **items; 
+	struct Node **items; 
 };
 
 void createQ(struct Queue *q){
 	printf("Enter size of the queue:\n");
 	scanf("%d", &q->size);
 	q->front = q->rear = 0;
-	q->items = ( Node **)malloc(q->size*sizeof(Node *));
+	q->items = ( struct Node **)malloc(q->size*sizeof( struct Node *));
 }
 
-void enqueue(struct Queue *q, Node *value){
+void enqueue(struct Queue *q, struct Node *value){
 	if((q->rear+1)%q->size == q->front)
 		printf("Queue is full\n");
 	else{
@@ -33,8 +29,8 @@ void enqueue(struct Queue *q, Node *value){
 	}
 }
 
-Node * dequeue(struct Queue *q){
-	Node * value = NULL;
+struct Node * dequeue(struct Queue *q){
+	struct Node * value = NULL;
 	if(q->front == q->rear)
 		printf("Queue is empty\n");
 	else{
@@ -47,5 +43,3 @@ Node * dequeue(struct Queue *q){
 int isEmpty(struct Queue queue){
 	return queue.front == queue.rear;
 }
-
-#endif
