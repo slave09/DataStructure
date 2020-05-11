@@ -1,7 +1,7 @@
 /*
   Name  : Fakhra Najm
   email : fnajm09@gmail.com
-  Iterative function of tree traversal
+  Iterative function for tree traversal
 */
 
 #include<stdio.h>
@@ -62,11 +62,59 @@ void preorder(struct Node *node){
       node = node->right_child;
     }
   }
+  printf("\n");
+}
+
+void postorder(struct Node *node){
+  struct stack st;
+  int long store;
+  createStack(&st, 100);
+  while(node != NULL || !isEmptyStack(st)){
+    if(node != NULL){
+      push(&st, node);
+      node = node->left_child;
+    }
+    else{
+      store = (long int)pop(&st);
+      if(store > 0){
+        store *= -1;
+        push(&st,(struct Node *)store );
+        node = ((struct Node *)store)->right_child;
+      }
+      else{
+        printf("%d ", ((struct Node *)store)->data);
+        node = NULL;
+      }
+    }
+  }
+  printf("\n");
+}
+
+void Inorder(struct Node *node){
+  struct stack st;
+  createStack(&st, 100);
+  while(node != NULL || !isEmptyStack(st)){
+    if(node != NULL){
+      push(&st, node);
+      node = node->left_child;
+    }
+    else{
+      node = pop(&st);
+      printf("%d ", node->data);
+      node = node->right_child;
+    }
+  }
+  printf("\n");
 }
 
 int main(){
 
   createTree();
+  printf("Preorder: ");
   preorder(root);
+  printf("Inorder: ");
+  Inorder(root);
+  printf("Postorder: ");
+  postorder(root);
   return 0;
 }

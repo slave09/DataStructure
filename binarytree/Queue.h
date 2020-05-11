@@ -1,5 +1,8 @@
 //header file for creating tree using queue.
 
+#ifndef Queue_h
+#define Queue_h
+
 struct Node
 {
 	struct Node *left_child;
@@ -45,3 +48,5 @@ struct Node * dequeue(struct Queue *q){
 int isEmpty(struct Queue queue){
 	return queue.front == queue.rear;
 }
+
+#endif
