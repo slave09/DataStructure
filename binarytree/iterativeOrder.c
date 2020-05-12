@@ -36,7 +36,7 @@ void createTree(){
       enqueue(&q, node);
     }
 
-    printf("Enter RighttChild of %d :", holder->data);  
+    printf("Enter RightChild of %d :", holder->data);  
     scanf("%d", &value);
     if(value != -1){
       node = (struct Node *)malloc(sizeof(struct Node));
@@ -66,24 +66,25 @@ void preorder(struct Node *node){
 }
 
 void postorder(struct Node *node){
-  struct stack st;
-  int long store;
-  createStack(&st, 100);
-  while(node != NULL || !isEmptyStack(st)){
+  struct stack st1, st2;
+  struct Node *value;
+
+  createStack(&st1, 100);
+  createStack(&st2, 100);
+
+  while(node != NULL || !isEmptyStack(st2)){
     if(node != NULL){
-      push(&st, node);
+      push(&st1, node);
+      push(&st2, node);
       node = node->left_child;
     }
     else{
-      store = (long int)pop(&st);
-      if(store > 0){
-        store *= -1;
-        push(&st,(struct Node *)store );
-        node = ((struct Node *)store)->right_child;
+      if(!isEmptyStack(st1)){
+        node = pop(&st1);
+        node = node->right_child;
       }
-      else{
-        printf("%d ", ((struct Node *)store)->data);
-        node = NULL;
+      if(isEmptyStack(st1)){
+        printf("%d ", pop(&st2)->data);
       }
     }
   }
