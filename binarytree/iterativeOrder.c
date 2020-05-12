@@ -83,7 +83,7 @@ void postorder(struct Node *node){
         node = pop(&st1);
         node = node->right_child;
       }
-      if(isEmptyStack(st1)){
+      else{
         printf("%d ", pop(&st2)->data);
       }
     }
