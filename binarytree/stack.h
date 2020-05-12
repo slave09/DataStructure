@@ -1,3 +1,6 @@
+#ifndef stack_h
+#define stack_h
+
 #include"Queue.h"
 
 struct stack{
@@ -62,3 +65,13 @@ int isEmptyStack(struct stack st){
 	else
 		return 0;
 }
+
+struct Node * stackTop(struct stack st){
+	if (st.top == -1){
+		return NULL;
+	}
+	else{
+		return st.items[st.top];
+	}
+}
+#endif
