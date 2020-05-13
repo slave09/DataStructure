@@ -74,4 +74,14 @@ struct Node * stackTop(struct stack st){
 		return st.items[st.top];
 	}
 }
+
+struct Node * peek(struct stack st, int index){
+	struct Node *value = NULL;
+	if(st.top-index+1 < 0)
+		printf("invalid index\n");
+	else{
+		value = st.items[st.top-index+1];
+	}
+	return value;
+}
 #endif

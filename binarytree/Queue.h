@@ -18,9 +18,8 @@ struct Queue
 	struct Node **items; 
 };
 
-void createQ(struct Queue *q){
-	printf("Enter size of the queue:\n");
-	scanf("%d", &q->size);
+void createQ(struct Queue *q, int size){
+	q->size = size;
 	q->front = q->rear = 0;
 	q->items = ( struct Node **)malloc(q->size*sizeof( struct Node *));
 }
