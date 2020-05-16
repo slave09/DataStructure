@@ -53,25 +53,19 @@ void createTree(){
 void postorder(struct Node *root){
 
   createStack(&stk, 100);
-  int i = 0;
+
   while(root || ! isEmptyStack(stk)){
+
     if(root){
       push(&stk, root);
       root = root->left_child;
     }
     else{
-      root = pop(&stk);
-      if( root->right_child == NULL){
-        printf("%d ", root->data);
-        root = NULL;
-        i++;
-        }
-
+      root = stackTop(stk)->right_child;
+      if(root == NULL){
+        printf("%d ",pop(&stk)->data);
+        root = stackTop(stk)->right_child;
       }
-      else{
-        root = root->right_child;
-      }
-
     }
   }
 }
