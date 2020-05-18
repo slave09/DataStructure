@@ -15,7 +15,7 @@ struct Node *root = NULL;
 void createTree(){
   struct Node *holder, *node;
   struct Queue q;
-  createQ(&q);
+  createQ(&q, 100);
   int value;
   printf("Enter root value : ");
   scanf("%d", &value);
