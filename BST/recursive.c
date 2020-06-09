@@ -8,7 +8,7 @@
             3. height
             4. Predecessor
             5. Successor
-            6. delete
+            6. Delete
 */
 
 #include<stdio.h>
@@ -18,15 +18,19 @@ struct Node {
   struct Node *left;
   struct Node *right;
   int data;
-};
+}*root = NULL;
+
+struct Node * createNode(struct Node *node, int value){
+  node = (struct Node *)malloc(sizeof(struct Node));
+  node->data = value;
+  node->left = node->right = NULL;
+  return node;
+}
 
 struct Node * insert(struct Node *node, int value){
   struct Node *temp;
   if(node == NULL){
-  temp = (struct Node *)malloc(sizeof(struct Node));
-  temp->data = value;
-  temp->left = temp->right = NULL;
-  return temp;
+    return createNode(temp, value);
   }
   if(node->data > value)
   node->left = insert(node->left, value);
@@ -35,6 +39,7 @@ struct Node * insert(struct Node *node, int value){
   return node;
 }
 
+// printing binary search tree in sorted order
 void inorder(struct Node *node){
   if(node){
     inorder(node->left);
@@ -45,15 +50,12 @@ void inorder(struct Node *node){
 
 struct Node * search(struct Node *root, int key){
   if(root){
-    if(root->data > key){
+    if(root->data > key)
       return search(root->left, key);
-    }
-    else if(root->data < key){
+    else if(root->data < key)
       return search(root->right, key);
-    }
-    else{
+    else
       return root;
-    }
   }
   return NULL;
 }
@@ -68,54 +70,56 @@ int height(struct Node *root){
 }
 
 struct Node* Predecessor(struct Node *root){
-  while(root && root->right != NULL){
+  while(root != NULL && root->right != NULL)
     root = root->right;
-  }
   return root;
 }
 
 struct Node* successor(struct Node *root){
-  while(root && root->left != NULL)
+  while(root != NULL && root->left != NULL)
     root = root->left;
   return root;
 }
 
-struct Node *delete(struct Node *node, int key){
+struct Node *Delete(struct Node *node, int key){
   struct Node *temp;
-  if(node == NULL) return NULL;
-  if(! root->left && ! root->right){
+  if(node == NULL) 
+  return NULL;
+  if(! node->left && ! node->right){
     if(node == root)
       root = NULL;
     free(node);
     return NULL;
   }
-  if(root->data > key)
-  return delete(root->left, key);
-  else if(root->data < key)
-  return delete(root->right, key);
+  if(node->data > key)
+    node->left = Delete(node->left, key);
+  else if(node->data < key)
+    node->right = Delete(node->right, key);
   else{
-    if(height(root->left) > height(root->right)){
-      temp = Predecessor(root->left);
-      root->data = temp->data;
-      root->left = delete(root->left, temp->data);
+    int left, right;
+    left = height(node->left);
+    right = height(node->right);
+    if( left > right){
+      temp = Predecessor(node->left);
+      node->data = temp->data;
+      node->left = Delete(node->left, temp->data);
     }
     else{
-      temp = successor(root->right);
-      root-data = temp->data;
-      root->right = delete(root->right, temp->data);
+      temp = successor(node->right);
+      node->data = temp->data;
+      node->right = Delete(node->right, temp->data);
     }
   }
   return node;
 }
 
 int main(){
-  struct Node *root = NULL;
   struct Node * result;
-  root = insert(root,10);
-  insert(root,5);
-  insert(root,20);
-  insert(root,15);
-  //delete(root, 15);
+  root = insert(root, 10);
+  insert(root, 5);
+  insert(root, 20);
+  insert(root, 15);
+  Delete(root, 15);
   inorder(root);
   result = search(root, 10); 
   if(result)
