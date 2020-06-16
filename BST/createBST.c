@@ -8,7 +8,6 @@
 #include<stdlib.h>
 #include"stack.h"
 
-struct stack stk;
 struct Node *root = NULL;
 
 struct Node *createNode(struct Node *node, int value){
@@ -21,6 +20,7 @@ struct Node *createNode(struct Node *node, int value){
 void createBST(int preorder[], int nodes){
   struct Node *temp, *node;
   int i = 0;
+  struct stack stk;
   createStack(&stk, 100);
   root = createNode(root, preorder[i++]);
   temp = root;
@@ -53,6 +53,43 @@ void createBST(int preorder[], int nodes){
   }
 }
 
+
+void bstFromPostorder(int postorder[], int nodes){
+  struct Node *node, *temp;
+  struct stack stk;
+  createStack(&stk, 100);
+  nodes = nodes - 1;
+  root = createNode(root, postorder[nodes--]);
+  temp = root;
+  while(nodes >= 0){
+    if(temp->data < postorder[nodes]){
+      node = createNode(node, postorder[nodes--]);
+      temp->right_child = node;
+      push(&stk, temp);
+      temp = node;
+    }
+    else{
+      if(isEmptyStack(stk)){
+        node = createNode(node, postorder[nodes--]);
+        temp->right_child = node;
+        temp = node;
+        push(&stk, temp);
+      }
+      else if(stackTop(stk)->data < postorder[nodes] && postorder[nodes] < temp->data ){
+        node = createNode(node, postorder[nodes--]);
+        temp->left_child = node;
+        push(&stk, temp);
+        temp = node;
+      }
+      else{
+        node = createNode(node, postorder[nodes--]);
+        pop(&stk)->left_child = node;
+        temp = node;
+      }
+    }
+  }
+}
+
 void inorder(struct Node *root){
   if(root){
     inorder(root->left_child);
@@ -63,7 +100,14 @@ void inorder(struct Node *root){
 
 int main(){
   int preorder[7] = {50, 40, 30, 45, 60, 55, 70};
+  int postorder[7] = {30, 45, 40, 55, 70, 60, 50};
   createBST(preorder, 7);
+  printf("Binary search tree from preorder:");
+  inorder(root);
+  printf("\n");
+  root = NULL;
+  bstFromPostorder(postorder, 7);
+  printf("Binary search tree from postorder:");
   inorder(root);
   return 0;
 }
