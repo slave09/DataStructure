@@ -8,7 +8,7 @@
 #include<stdlib.h>
 #include"stack.h"
 
-struct stack *stk;
+struct stack stk;
 struct Node *root = NULL;
 
 struct Node *createNode(struct Node *node, int value){
@@ -28,29 +28,42 @@ void createBST(int preorder[], int nodes){
     if(preorder[i] < temp->data){
       node = createNode(node, preorder[i++]);
       temp->left_child = node;
-      push(stk, temp);
+      push(&stk, temp);
       temp = node;
     }
     else{
-      if(preorder[i] < stackTop(stk)->data && temp->data < preorder[i]){
+      if(isEmptyStack(stk)){
+         node = createNode(node, preorder[i++]);
+         temp->right_child = node;
+         push(&stk, temp);
+         temp = node;
+      }
+      else if(preorder[i] < stackTop(stk)->data && temp->data < preorder[i]){
         node = createNode(node, preorder[i++]);
         temp->right_child = node;
+        push(&stk, temp);
         temp = node;
       }
       else{
         node = createNode(node, preorder[i++]);
-        if(! isEmptyStack) 
-          pop(stk)->right_child = node;
-        else
-          temp->right_child = node;
+        pop(&stk)->right_child = node;
         temp = node;
       }
     }
   }
 }
 
+void inorder(struct Node *root){
+  if(root){
+    inorder(root->left_child);
+    printf("%d ", root->data);
+    inorder(root->right_child);
+  }
+}
+
 int main(){
-  int preorder[5] = {1, 2, 3, 4, 5};
-  createBST(preorder, 5);
+  int preorder[7] = {50, 40, 30, 45, 60, 55, 70};
+  createBST(preorder, 7);
+  inorder(root);
   return 0;
 }
