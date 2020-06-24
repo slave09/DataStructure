@@ -33,6 +33,46 @@ struct Node{
 
 int node_height(struct Node *root);
 
+struct Node * LR_Rotation(struct Node *node){
+  struct Node *node_left = node->left;
+  struct Node *left_right = node_left->right;
+
+  node_left->right = left_right->left;
+  node->left = left_right->right;
+
+  left_right->left = node->left;
+  left_right->right = node;
+
+  node->height = node_height(node);
+  node_left->height = node_height(node_left);
+  left_right->height = node_height(left_right);
+
+  if(root == node)
+    root = left_right;
+  
+  return left_right;
+}
+
+
+struct Node *RL_Rotation(struct Node *node){
+  struct Node * right_node = node->right;
+  struct Node * right_left = right_node->left;
+
+
+  right_left->left = node;
+  right_left->right = right_node;
+
+  if(root == node)
+    root = right_left;
+
+    node->height = node_height(node);
+    right_node->height = node_height(right_node);
+    right_left->height = node_height(right_left);
+
+  return right_left;
+}
+
+
 struct Node * RR_Rotation(struct Node *node){
 
   struct Node * right_node = node->right;
@@ -100,8 +140,8 @@ int node_height(struct Node *root){
 
   int left, right;
 
-  left = root && root->left ? node_height(root->left) : 0;
-  right = root && root->right ? node_height(root->right) : 0;
+  left = root && root->left ? root->left->height : 0;
+  right = root && root->right ? root->right->height : 0;
 
   return left > right ? left+1 : right+1;
 }
@@ -111,35 +151,37 @@ int Balance_factor(struct Node *node){
 
   int left, right;
 
-  left = root && root->left ? node_height(root->left) : 0;
-  right = root && root->right ? node_height(root->right) : 0; 
+  left = root && root->left ? root->left->height : 0;
+  right = root && root->right ? root->right->height : 0; 
 
   return left - right;
 }
 
 
 struct Node *Rotate(struct Node *node, int BALANCE_FACTOR){
-  
+  int bf;
   if(BALANCE_FACTOR == 2){
 
-    BALANCE_FACTOR == Balance_factor(node->left);
+     bf = Balance_factor(node->left);
 
-    if(BALANCE_FACTOR == 1)
+    if(bf == 1)
       return LL_Rotation(node);
 
-    else if(BALANCE_FACTOR == -1)
+    else if(bf == -1)
       return LR_Rotation(node);
+    
+    else if (bf > )
 
   }
 
   else if(BALANCE_FACTOR == -2){
 
-    BALANCE_FACTOR == Balance_factor(node->right);
+    bf = Balance_factor(node->right);
 
-    if(BALANCE_FACTOR == 1)
+    if(bf == 1)
       return RL_Rotation(node);
 
-    else if(BALANCE_FACTOR == -1)
+    else if(bf == -1)
       return RR_Rotation(node);
   }
 
@@ -149,7 +191,7 @@ struct Node *Rotate(struct Node *node, int BALANCE_FACTOR){
 
 struct Node * insert(struct Node *node, int value){
 
-  struct Node *temp;
+  struct Node *temp = NULL;
   int BALANCE_FACTOR;
 
   if(node == NULL){
@@ -165,16 +207,13 @@ struct Node * insert(struct Node *node, int value){
   node->height = node_height(node);
 
   BALANCE_FACTOR = Balance_factor(node);
-
-  if(BALANCE_FACTOR != 0 || BALANCE_FACTOR != 1 || BALANCE_FACTOR != -1)
-    Rotate(node, BALANCE_FACTOR);
-
+  Rotate(node, BALANCE_FACTOR);
   return node;
 }
 
 
 int main(){
-
+  int BALANCE_FACTOR;
   root = insert(root, 30);
   insert(root, 20);
   insert(root, 40);
@@ -185,8 +224,7 @@ int main(){
   insert(root, 15);
   insert(root, 4);
   insert(root, 28);
-
+  printf("\n");
   Inorder(root);
-
   return 0;
 }
