@@ -37,6 +37,17 @@ struct Node * RR_Rotation(struct Node *node){
 
   struct Node * right_node = node->right;
   struct Node * right_left = right_node->left;
+
+  node->right = right_left;
+  right_node->left = node;
+
+  node->height = node_height(node);
+  right_node->height = node_height(right_node);
+
+  if(root == node)
+    root = right_node;
+  
+  return right_node;
   
 }
 
