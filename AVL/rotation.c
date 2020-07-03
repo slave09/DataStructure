@@ -13,6 +13,7 @@
     * RL_Rotation
     * Balance_factor
     * Node_height
+    * Rotate
 
 */
 
@@ -29,9 +30,6 @@ struct Node{
   int height;
 
 }*root = NULL;
-
-
-int node_height(struct Node *root);
 
 struct Node * LR_Rotation(struct Node *node){
   struct Node *node_left = node->left;
@@ -136,12 +134,12 @@ void Inorder(struct Node *root){
 }
 
 
-int node_height(struct Node *root){
+int node_height(struct Node *node){
 
   int left, right;
 
-  left = root && root->left ? root->left->height : 0;
-  right = root && root->right ? root->right->height : 0;
+  left = node && node->left ? node->left->height : 0;
+  right = node && node->right ? node->right->height : 0;
 
   return left > right ? left+1 : right+1;
 }
@@ -151,8 +149,8 @@ int Balance_factor(struct Node *node){
 
   int left, right;
 
-  left = root && root->left ? root->left->height : 0;
-  right = root && root->right ? root->right->height : 0; 
+  left = node && node->left ? node->left->height : 0;
+  right = node && node->right ? node->right->height : 0; 
 
   return left - right;
 }
@@ -162,16 +160,13 @@ struct Node *Rotate(struct Node *node, int BALANCE_FACTOR){
   int bf;
   if(BALANCE_FACTOR == 2){
 
-     bf = Balance_factor(node->left);
+    bf = Balance_factor(node->left);
 
     if(bf == 1)
-      return LL_Rotation(node);
+      node = LL_Rotation(node);
 
     else if(bf == -1)
-      return LR_Rotation(node);
-    
-    else if (bf > )
-
+      node = LR_Rotation(node);
   }
 
   else if(BALANCE_FACTOR == -2){
@@ -179,10 +174,10 @@ struct Node *Rotate(struct Node *node, int BALANCE_FACTOR){
     bf = Balance_factor(node->right);
 
     if(bf == 1)
-      return RL_Rotation(node);
+      node = RL_Rotation(node);
 
     else if(bf == -1)
-      return RR_Rotation(node);
+      node = RR_Rotation(node);
   }
 
   return node;
@@ -213,7 +208,6 @@ struct Node * insert(struct Node *node, int value){
 
 
 int main(){
-  int BALANCE_FACTOR;
   root = insert(root, 30);
   insert(root, 20);
   insert(root, 40);
@@ -222,9 +216,9 @@ int main(){
   insert(root, 25);
   insert(root, 5);
   insert(root, 15);
-  insert(root, 4);
   insert(root, 28);
-  printf("\n");
+  insert(root, 4);
   Inorder(root);
+  printf("\n%d", Balance_factor(root));
   return 0;
 }
