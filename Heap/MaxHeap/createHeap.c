@@ -14,24 +14,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void CreateHeap(int size);
+void CreateHeap();
 void Insert(int index);
-void Print(int size);
+void Print();
 int Delete(int last_index);
 void swap(int *parent, int *child);
 
 int * heap;
+int size;
+
 int main()
 {
-  int size;
-
   printf("Enter size of Max heap: ");
   scanf("%d", &size);
-
-  CreateHeap(size);
-  printf("%d is deleted\n",Delete(size));
-  Print(size);
-
+  CreateHeap();
+  //Heap sort
+  for(int i = size; i > 1; i--) Delete(i);
+  Print();
   return 0;
 }
 
@@ -50,7 +49,6 @@ void Insert(int index)
     heap[i] = heap[i / 2];
     i /= 2;
   }
-
   heap[i] = temp;
 }
 
@@ -60,7 +58,7 @@ void Insert(int index)
   * @param size of the array
 
 */
-void CreateHeap(int size)
+void CreateHeap()
 {
   heap = (int *)malloc(sizeof(int) * (size + 1));
   heap[0] = 0;
@@ -77,7 +75,7 @@ void CreateHeap(int size)
   * @param size is the size of the Max heap 
 */
 
-void Print(int size)
+void Print()
 {
   for (int i = 1; i <= size; i++)
     printf("%d ", heap[i]);
@@ -109,10 +107,8 @@ int Delete(int last_index)
     }
     else
       break;
-    
   }
   return deleted_val;
-
 }
 
 void swap(int *parent, int *child)
