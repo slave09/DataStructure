@@ -5,30 +5,32 @@
   Topic: Inplace Max Heap Creation
 
   Operation:
-    * Insert
     * CreateHeap
+    * Insert
+    * Delete
     * Print
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 
+void CreateHeap(int size);
+void Insert(int index);
+void Print(int size);
+int Delete(int last_index);
+void swap(int *parent, int *child);
 
-void CreateHeap(int heap[], int size);
-void Insert(int heap[], int n);
-void Print(int heap[], int size);
-
+int * heap;
 int main()
 {
-  int size, *heap;
+  int size;
 
   printf("Enter size of Max heap: ");
   scanf("%d", &size);
 
-  heap = (int *)malloc(sizeof(int) * (size + 1));
-
-  CreateHeap(heap, size);
-  Print(heap, size);
+  CreateHeap(size);
+  printf("%d is deleted\n",Delete(size));
+  Print(size);
 
   return 0;
 }
@@ -39,7 +41,7 @@ int main()
   @param index index of the value to be inserted
 */
 
-void Insert(int heap[], int index)
+void Insert(int index)
 {
   int i = index, temp = heap[index];
 
@@ -58,14 +60,15 @@ void Insert(int heap[], int index)
   * @param size of the array
 
 */
-void CreateHeap(int heap[], int size)
+void CreateHeap(int size)
 {
+  heap = (int *)malloc(sizeof(int) * (size + 1));
   heap[0] = 0;
   printf("Enter node values: ");
   for (int i = 1; i <= size; i++)
     scanf("%d", &heap[i]);
   for (int i = 2; i <= size; i++)
-    Insert(heap, i);
+    Insert(i);
 }
 
 /*
@@ -74,9 +77,48 @@ void CreateHeap(int heap[], int size)
   * @param size is the size of the Max heap 
 */
 
-void Print(int heap[], int size)
+void Print(int size)
 {
   for (int i = 1; i <= size; i++)
     printf("%d ", heap[i]);
   printf("\n");
+}
+
+/*
+  * Deletes the root of the heap
+  * @param heap array of heap
+  * @param last_index index of the last element of the complete binary tree
+*/
+
+int Delete(int last_index)
+{
+  int x, i = 1, j = i*2,deleted_val=heap[1];
+  heap[i] = heap[last_index];
+  heap[last_index] = deleted_val;
+  while ( j < last_index -1)
+  {
+    // compare children of the parent node
+    if (heap[j + 1] > heap[j])
+      j = j + 1;
+    // swap root with child if child is greater than root
+    if (heap[i] < heap[j])
+    {
+      swap(&heap[i], &heap[j]);
+      i = j;
+      j = 2*i;
+    }
+    else
+      break;
+    
+  }
+  return deleted_val;
+
+}
+
+void swap(int *parent, int *child)
+{
+  int temp;
+  temp = *parent;
+  *parent = *child;
+  *child = temp;
 }
