@@ -9,39 +9,39 @@ struct Node{
 
 // returns a linked list node
 struct Node * createNode(int col, int val){
-  // create a linked list node and store its location into a pointer
+	// create a linked list node and store its location into a pointer
   struct Node * node = (struct Node *)malloc(sizeof(struct Node));
 
   // assign values to the using pointer of the node
-  node->column = col;
-  node->value = val;
-  node->next = NULL;
+	node->column = col;
+	node->value = val;
+	node->next = NULL;
   // return created node's pointer
-  return node;
+	return node;
 }
 
 // inserts values add the end of linked list
 void insertNode(int col, int val){
   // store pointer of the created node in head if head is null
-  if(head == NULL){
-    head = last = createNode(col, val);
-  }
-  else {
+	if(head == NULL){
+		head = last = createNode(col, val);
+	}
+	else {
     // create a new node and store its pointer
-    struct Node * node = createNode(col, val);
+		struct Node * node = createNode(col, val);
     // make last node point to newly created node
-    last->next = node;
+		last->next = node;
     // set newly created node as last node
-    last = node;
-  }
+		last = node;
+	}
 }
 
 struct Node * createSparse(int row) {
-  int col,val;
+	int col,val;
 
   // make an array of size equal to row size, which will hold pointer to linked list
-  struct Node *rows = (struct Node *)malloc(row * sizeof(struct Node *));
-  
+	struct Node *rows = (struct Node *)malloc(row * sizeof(struct Node *));
+	
   // loop for all elements
   for(int i = 0 ; i < row ; i++) {
     // take the size of column
@@ -74,7 +74,7 @@ struct Node * createSparse(int row) {
     head = NULL; // reset value to null, to create next linked list
     last = NULL; // reset value to null, to create next linked list
   }
-  return rows;
+	return rows;
 }
 
 // print linked list
@@ -98,7 +98,7 @@ int main() {
    // take number of rows
   printf("Enter number of rows\n");
   scanf("%d",&row);
-  struct Node * sparse =  createSparse(row);
+	struct Node * sparse =  createSparse(row);
   printsparse(sparse, row);
-  return 0;
+	return 0;
 }
