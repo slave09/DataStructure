@@ -10,13 +10,15 @@
 
 int *__HEAP;
 int HEAP_SIZE;
-void heapify();
+void heapify(int index);
+void swap(int *parent, int *child);
+void createHeap();
 
 int main()
 {
 
   scanf("%d", &HEAP_SIZE);
-  heapify();
+  createHeap();
   for (int i = 1; i <= HEAP_SIZE; i++)
   {
     printf("%d ", __HEAP[i]);
@@ -26,26 +28,37 @@ int main()
   return 0;
 }
 
-void heapify()
+void createHeap()
 {
-
-  int index = HEAP_SIZE / 2, i;
   __HEAP = (int *)malloc(sizeof(int) * (HEAP_SIZE + 1));
   __HEAP[0] = 0;
   for (int i = 1; i <= HEAP_SIZE; i++)
     scanf("%d", &__HEAP[i]);
-  i = 2 * index;
-  while(index < HEAP_SIZE ){
-    if (__HEAP[index * 2] < __HEAP[index * 2 + 1])
+  for(int i = HEAP_SIZE/2; i > 0; i--)
+    heapify(i);
+}
+
+void heapify(int index)
+{
+  int j = index * 2;
+    while (index < HEAP_SIZE)
+  {
+    if (__HEAP[j] < __HEAP[j + 1])
+      j = j + 1;
+    if (__HEAP[index] < __HEAP[j])
     {
-      i = i + 1;
+      swap(&__HEAP[index], &__HEAP[j]);
+      index = j;
     }
-    if (__HEAP[index] < __HEAP[i])
-    {
-      int temp = __HEAP[index];
-      __HEAP[index] = __HEAP[i];
-      __HEAP[i] = temp;
-    }
-    index *= 2;
+    else
+      break;
   }
+}
+
+void swap(int *parent, int *child)
+{
+  int temp;
+  temp = *parent;
+  *parent = *child;
+  *child = temp;
 }
