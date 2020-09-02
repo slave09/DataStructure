@@ -34,24 +34,27 @@ void createHeap()
   __HEAP[0] = 0;
   for (int i = 1; i <= HEAP_SIZE; i++)
     scanf("%d", &__HEAP[i]);
-  for(int i = HEAP_SIZE/2; i > 0; i--)
+  for (int i = HEAP_SIZE / 2; i > 0; i--)
     heapify(i);
 }
 
 void heapify(int index)
 {
-  int j = index * 2;
-    while (index < HEAP_SIZE)
-  {
-    if (__HEAP[j] < __HEAP[j + 1])
-      j = j + 1;
-    if (__HEAP[index] < __HEAP[j])
+  for(int i = (index/2)-1; i >= 0; i--){
+    int j = index * 2 +1 ;
+    while (j < index - 1)
     {
-      swap(&__HEAP[index], &__HEAP[j]);
-      index = j;
+      if (__HEAP[j] < __HEAP[j + 1])
+        j = j + 1;
+      if (__HEAP[i] < __HEAP[j])
+      {
+        swap(&__HEAP[i], &__HEAP[j]);
+        i = j;
+        j = 2*i +1;
+      }
+      else
+        break;
     }
-    else
-      break;
   }
 }
 
