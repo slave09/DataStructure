@@ -35,6 +35,7 @@ struct Node * searchList(struct Node * head , int value)
 		else
 			head = head->next;
 	}
+	return NULL;
 }
 
 void printList(struct Node *head)
