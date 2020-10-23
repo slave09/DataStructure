@@ -13,7 +13,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
       * Sort 
       * Display
   * #### RecursiveArrays:
-    Implementation of Array using recursive functions.
+    * Implementation of Array using recursive functions.
   * #### SearchinginArrays
       * Linear search
       * Binary Search
@@ -44,7 +44,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
         * Remove duplicates
         * Deletion of node
   * #### recursiveLinkedList:
-        Performing CRUD operations using recursion
+        * Performing CRUD operations using recursion
   * #### Student Challenge:
        * Finding Middle element in a list
        * Generation of sparse matrix using Linked List
