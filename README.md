@@ -26,7 +26,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
       * Algorithm for Union of Two Arrays
       * Algorithm for Shift Merge and Reverse Operations on the Array
 ### 2. LinkList:
-    * #### iterativeLinkedList:
+   * #### iterativeLinkedList:
       Iterative operations on the list
         * Inserting node
         * display Linklist
