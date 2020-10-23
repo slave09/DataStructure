@@ -34,7 +34,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
         * Creation of sorted list
         * addition operation
         * Perform Linear Search in the list
-    * #### operationsOnLinkedList
+   * #### operationsOnLinkedList
         * Check for sorted list
         * Loop detection in a list
         * Merge two link lists
@@ -42,7 +42,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
         * Concatenation operation
         * Remove duplicates
         * Deletion of node
-   * #### recursiveLinkedList:
+  * #### recursiveLinkedList:
         Performing CRUD operation using recursion
 ### 3. Stack:
 ### 4. Queue:
