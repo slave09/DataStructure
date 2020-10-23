@@ -66,7 +66,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
   * Generation of Binary search tree and various operations on it
   * Recursive implementation of binary search tree
 ### 7. AVL:
-  * Performing Rotation while Generation of BST
+  * [Performing Rotation while Generation of BST](https://github.com/najm09/DataStructure/tree/master/AVL)
 ### 8. Heap:
 * Heapify Method for faster heap creation
 * #### Max heap
