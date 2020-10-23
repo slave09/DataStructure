@@ -26,6 +26,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
       * Algorithm for Union of Two Arrays
       * Algorithm for Shift Merge and Reverse Operations on the Array
 ### 2. LinkList:
+   Implementation of Linear, Doubly, Circular and circularDoubly Linked Lists.
    * #### iterativeLinkedList:
       Iterative operations on the list
         * Inserting node
@@ -43,12 +44,37 @@ This Repository is based on the course of **"Mastering Data structures and Algor
         * Remove duplicates
         * Deletion of node
   * #### recursiveLinkedList:
-        Performing CRUD operation using recursion
+        Performing CRUD operations using recursion
+  * #### Student Challenge:
+       * Finding Middle element in a list
+       * Generation of sparse matrix using Linked List
+       * Generation of Polynomial Linked List        
 ### 3. Stack:
+  * Stack Implementation code using Array as well as Link List
+  * Application of Stack in infix to postfix Conversion.
 ### 4. Queue:
+  * Implementation code for Queue using Array, Link List, Stack.
+  * Circular Queue
+  * DEQueue
+  * Recursive Queue
 ### 5. binarytree:
+  * CRUD Operations in a binary tree
+  * Level Order Traversal using Queue
+  * Post Order Traversal using one stack without recursion
+  * Recursive Inorder, Postorder and Preorder traversal
 ### 6. BST:
+  * Generation of Binary search tree and various operations on it
+  * Recursive implementation of binary search tree
 ### 7. AVL:
+  * Performing Rotation while Generation of BST
 ### 8. Heap:
+* Heapify Method for faster heap creation
+* #### Max heap
+  Creation of Heap and performing Heap sort
+* #### Min heap
+  Min heap implementation code
 ### 9. HashTable:
+  * Perform Chaining
 ### 10. Advanced:
+  * Binary indexed tree
+
