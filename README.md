@@ -25,7 +25,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
       * Algorithm for Intersection of Two Arrays
       * Algorithm for Union of Two Arrays
       * Algorithm for Shift Merge and Reverse Operations on the Array
-2. ### LinkList:
+### 2. LinkList:
     * #### iterativeLinkedList:
       Iterative operations on the list
         * Inserting node
@@ -44,11 +44,11 @@ This Repository is based on the course of **"Mastering Data structures and Algor
         * Deletion of node
    * #### recursiveLinkedList:
         Performing CRUD operation using recursion
-3. ### Stack:
-4. ### Queue:
-5. ### binarytree:
-6. ### BST:
-7. ### AVL:
-8. ### Heap:
-9. ### HashTable:
-10. ### Advanced:
+### 3. Stack:
+### 4. Queue:
+### 5. binarytree:
+### 6. BST:
+### 7. AVL:
+### 8. Heap:
+### 9. HashTable:
+### 10. Advanced:
