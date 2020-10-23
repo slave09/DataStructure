@@ -57,21 +57,21 @@ This Repository is based on the course of **"Mastering Data structures and Algor
   * [DEQueue](https://github.com/najm09/DataStructure/blob/master/Queue/DEQueue.c)
   * [Recursive Queue](https://github.com/najm09/DataStructure/blob/master/Queue/recursiveQueue.c)
 ### 5. [binarytree](https://github.com/najm09/DataStructure/tree/master/binarytree):
-  * CRUD Operations in a binary tree
-  * Level Order Traversal using Queue
-  * Post Order Traversal using one stack without recursion
-  * Recursive Inorder, Postorder and Preorder traversal
+  * [Nodes in a binary tree](https://github.com/najm09/DataStructure/blob/master/binarytree/nodes.c)
+  * [Level Order Traversal using Queue](https://github.com/najm09/DataStructure/blob/master/binarytree/levelorder.c)
+  * [Post Order Traversal using one stack without recursion](https://github.com/najm09/DataStructure/blob/master/binarytree/postorder.c)
+  * [Recursive Inorder, Postorder and Preorder traversal](https://github.com/najm09/DataStructure/blob/master/binarytree/create_tree.c)
 ### 6. [BST](https://github.com/najm09/DataStructure/tree/master/BST):
-  * Generation of Binary search tree and various operations on it
-  * Recursive implementation of binary search tree
-### 7. AVL:
+  * [Generation of Binary search tree and various operations on it](https://github.com/najm09/DataStructure/blob/master/BST/main.c)
+  * [Recursive implementation of binary search tree](https://github.com/najm09/DataStructure/blob/master/BST/recursive.c)
+### 7. [AVL](https://github.com/najm09/DataStructure/tree/master/AVL):
   * [Performing Rotation while Generation of BST](https://github.com/najm09/DataStructure/tree/master/AVL)
 ### 8. [Heap](https://github.com/najm09/DataStructure/tree/master/Heap):
 * [Heapify Method for faster heap creation](https://github.com/najm09/DataStructure/blob/master/Heap/heapify.c)
 * #### [Max heap](https://github.com/najm09/DataStructure/tree/master/Heap/MaxHeap)
 * #### [Min heap](https://github.com/najm09/DataStructure/tree/master/Heap/MinHeap)
-### 9. HashTable:
+### 9. [HashTable](https://github.com/najm09/DataStructure/tree/master/HashTable):
   * [Perform Chaining](https://github.com/najm09/DataStructure/blob/master/HashTable/chaining.c)
-### 10. Advanced:
+### 10. [Advanced](https://github.com/najm09/DataStructure/tree/master/Advanced):
   * [Binary indexed tree](https://github.com/najm09/DataStructure/blob/master/Advanced/binaryIndexTree.cpp)
 
