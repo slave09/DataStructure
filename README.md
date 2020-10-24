@@ -6,7 +6,6 @@ This Repository is based on the course of **"Mastering Data structures and Algor
   * #### [DynamicMemory](https://github.com/najm09/DataStructure/tree/master/Arrays/DynamicMemory)
     * Dynamic memory allocation in heap and use of malloc function.
   * #### [OperationOnArrays](https://github.com/najm09/DataStructure/tree/master/Arrays/OperationsOnArrays)
-    **General CRUD OPerations like**
       * [Insert](https://github.com/najm09/DataStructure/blob/master/Arrays/OperationsOnArrays/array_insert.c)
       * [Append](https://github.com/najm09/DataStructure/blob/master/Arrays/OperationsOnArrays/array_append.c)
       * [Delete](https://github.com/najm09/DataStructure/blob/master/Arrays/OperationsOnArrays/array_delete.c)
@@ -22,9 +21,9 @@ This Repository is based on the course of **"Mastering Data structures and Algor
       * [Linear Search Transposition](https://github.com/najm09/DataStructure/blob/master/Arrays/SearchingInArrays/array_linearSearschTransposition.c)
       * [searching missing single](https://github.com/najm09/DataStructure/blob/master/Arrays/SearchingInArrays/arrays_returnMissing.c) or [multiple elements](https://github.com/najm09/DataStructure/blob/master/Arrays/SearchingInArrays/array_multiple_missing.c)
   * #### [SetOperations](https://github.com/najm09/DataStructure/tree/master/Arrays/SetOperation)
-      * Intersection of Two Arrays
-      * Union of Two Arrays
-      * Shift Merge and Reverse Operations on the Array
+      * [Intersection of Two Arrays](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/array_intersection.c)
+      * [Union of Two Arrays](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/arrays_union.c)
+      * [Shift](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/array_shift.c) [Merge](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/arrays_merge.c) and [Reverse](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/array_reverse.c) Operations on the Array
 ### 2. [LinkList](https://github.com/najm09/DataStructure/tree/master/LinkedList)
    Implementation of Linear, Doubly, Circular and circularDoubly Linked Lists.
    * #### [iterativeLinkedList](https://github.com/najm09/DataStructure/tree/master/LinkedList/iterativeLinkedList)
