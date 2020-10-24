@@ -34,7 +34,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
         * [Linear Search](https://github.com/najm09/DataStructure/blob/master/LinkedList/iterativeLinkedList/linearSearch_iterative.c)
         * [Perform Linear Search in the list]()
    * #### [operationsOnLinkedList](https://github.com/najm09/DataStructure/tree/master/LinkedList/operationsOnLinkedList)
-        * [Check for sorted list](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/checkSort.c
+        * [Check for sorted list](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/checkSort.c)
         * [Loop detection in a list](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/loopDetection.c)
         * [Merge two link lists](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/mergeTwoLinks.c)
         * [Reversing a link list](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/reversingLinks.c)
@@ -76,5 +76,5 @@ This Repository is based on the course of **"Mastering Data structures and Algor
 
 ----------------------------------------------------------------------------------------------------------------
 ## Contributors:
- *  **[Fakhra Najm](github.com/najm09)** fnajm09@gmail.com
+ *  **[Fakhra Najm](https://github.com/najm09)** fnajm09@gmail.com
  * **[Md Sharique Shahab](https://github.com/shariquesha)** shariqueshahab@gmail.com
