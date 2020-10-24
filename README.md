@@ -4,7 +4,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
 ## Directories Description
 ### 1. [Arrays](https://github.com/najm09/DataStructure/tree/master/Arrays)
   * #### [DynamicMemory](https://github.com/najm09/DataStructure/tree/master/Arrays/DynamicMemory)
-    * Dynamic memory allocation in heap and use of malloc function.
+    * Dynamic memory allocation in [heap](https://github.com/najm09/DataStructure/blob/master/Arrays/DynamicMemory/array_heap.c) and use of [malloc function](https://github.com/najm09/DataStructure/blob/master/Arrays/DynamicMemory/malloc.c).
   * #### [OperationOnArrays](https://github.com/najm09/DataStructure/tree/master/Arrays/OperationsOnArrays)
       * [Insert](https://github.com/najm09/DataStructure/blob/master/Arrays/OperationsOnArrays/array_insert.c)
       * [Append](https://github.com/najm09/DataStructure/blob/master/Arrays/OperationsOnArrays/array_append.c)
