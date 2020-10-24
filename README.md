@@ -64,9 +64,9 @@ This Repository is based on the course of **"Mastering Data structures and Algor
   * [Generation of Binary search tree and various operations on it](https://github.com/najm09/DataStructure/blob/master/BST/main.c)
   * [Recursive](https://github.com/najm09/DataStructure/blob/master/BST/recursive.c) implementation of binary search tree
 ### 7. [AVL](https://github.com/najm09/DataStructure/tree/master/AVL)
-  * [Performing Rotation while Generation of BST](https://github.com/najm09/DataStructure/tree/master/AVL)
+  * Performing [Rotation](https://github.com/najm09/DataStructure/tree/master/AVL) while Generation of BST
 ### 8. [Heap](https://github.com/najm09/DataStructure/tree/master/Heap)
-* [Heapify](https://github.com/najm09/DataStructure/blob/master/Heap/heapify.c)Method for faster heap creation
+* [Heapify](https://github.com/najm09/DataStructure/blob/master/Heap/heapify.c) method for faster heap creation
 * [Max heap](https://github.com/najm09/DataStructure/tree/master/Heap/MaxHeap)
 * [Min heap](https://github.com/najm09/DataStructure/tree/master/Heap/MinHeap)
 ### 9. [HashTable](https://github.com/najm09/DataStructure/tree/master/HashTable)
