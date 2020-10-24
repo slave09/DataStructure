@@ -12,7 +12,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
       * [Sort](https://github.com/najm09/DataStructure/blob/master/Arrays/OperationsOnArrays/array_insertSort.c)
       * [Display](https://github.com/najm09/DataStructure/blob/master/Arrays/OperationsOnArrays/array_display.c)
   * #### [RecursiveArrays](https://github.com/najm09/DataStructure/tree/master/Arrays/RecursiveArrays)
-    * [Implementation of Array using recursive functions](https://github.com/najm09/DataStructure/blob/master/Arrays/RecursiveArrays/array_%20usingRecursion.c).
+    * Implementation of Array using [recursive functions](https://github.com/najm09/DataStructure/blob/master/Arrays/RecursiveArrays/array_%20usingRecursion.c).
   * #### [SearchinginArrays](https://github.com/najm09/DataStructure/tree/master/Arrays/SearchingInArrays)
       * [Linear search](https://github.com/najm09/DataStructure/blob/master/Arrays/SearchingInArrays/array_linearSearch.c)
       * [Binary Search](https://github.com/najm09/DataStructure/blob/master/Arrays/SearchingInArrays/binarySearch_iterative.c)
@@ -49,7 +49,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
        * [Generation of Polynomial Linked List](https://github.com/najm09/DataStructure/blob/master/LinkedList/studentChallenge/polynomial.c)        
 ### 3. [Stack](https://github.com/najm09/DataStructure/tree/master/Stack)
   * Stack Implementation code using [Array](https://github.com/najm09/DataStructure/blob/master/Stack/StackArray.c) as well as [Link List](https://github.com/najm09/DataStructure/blob/master/Stack/StackLL.c)
-  * [Application of Stack in infix to postfix Conversion](https://github.com/najm09/DataStructure/blob/master/Stack/application.c)
+  * Application of Stack in [infix to postfix Conversion](https://github.com/najm09/DataStructure/blob/master/Stack/application.c)
 ### 4. [Queue](https://github.com/najm09/DataStructure/tree/master/Queue)
   * Implementation code for Queue using [Array](https://github.com/najm09/DataStructure/blob/master/Queue/QueueArray.c), [Link List](https://github.com/najm09/DataStructure/blob/master/Queue/QueueLL.c), [Stack](https://github.com/najm09/DataStructure/blob/master/Queue/QueueStack.c).
   * [Circular Queue](https://github.com/najm09/DataStructure/blob/master/Queue/circularQueueArray.c)
