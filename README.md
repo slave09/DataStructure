@@ -7,20 +7,20 @@ This Repository is based on the course of **"Mastering Data structures and Algor
     * Dynamic memory allocation in heap and use of malloc function.
   * #### [OperationOnArrays](https://github.com/najm09/DataStructure/tree/master/Arrays/OperationsOnArrays)
     **General CRUD OPerations like**
-      * Insert
-      * Append
-      * Delete
-      * Sort 
-      * Display
+      * [Insert](https://github.com/najm09/DataStructure/blob/master/Arrays/OperationsOnArrays/array_insert.c)
+      * [Append](https://github.com/najm09/DataStructure/blob/master/Arrays/OperationsOnArrays/array_append.c)
+      * [Delete](https://github.com/najm09/DataStructure/blob/master/Arrays/OperationsOnArrays/array_delete.c)
+      * [Sort](https://github.com/najm09/DataStructure/blob/master/Arrays/OperationsOnArrays/array_insertSort.c)
+      * [Display](https://github.com/najm09/DataStructure/blob/master/Arrays/OperationsOnArrays/array_display.c)
   * #### [RecursiveArrays](https://github.com/najm09/DataStructure/tree/master/Arrays/RecursiveArrays)
     * Implementation of Array using recursive functions.
   * #### [SearchinginArrays](https://github.com/najm09/DataStructure/tree/master/Arrays/SearchingInArrays)
-      * Linear search
-      * Binary Search
-      * Searching with recursion
-      * Improving Linear Search
-      * Linear Search Transposition
-      * Algorithm for searching missing single or multiple elements
+      * [Linear search](https://github.com/najm09/DataStructure/blob/master/Arrays/SearchingInArrays/array_linearSearch.c)
+      * [Binary Search](https://github.com/najm09/DataStructure/blob/master/Arrays/SearchingInArrays/binarySearch_iterative.c)
+      * [Searching with recursion](https://github.com/najm09/DataStructure/blob/master/Arrays/SearchingInArrays/binarySearch_recursive.c)
+      * [Improving Linear Search](https://github.com/najm09/DataStructure/blob/master/Arrays/SearchingInArrays/array_linearSearchImproved.c)
+      * [Linear Search Transposition](https://github.com/najm09/DataStructure/blob/master/Arrays/SearchingInArrays/array_linearSearschTransposition.c)
+      * [searching missing single](https://github.com/najm09/DataStructure/blob/master/Arrays/SearchingInArrays/arrays_returnMissing.c) or [multiple elements](https://github.com/najm09/DataStructure/blob/master/Arrays/SearchingInArrays/array_multiple_missing.c)
   * #### [SetOperations](https://github.com/najm09/DataStructure/tree/master/Arrays/SetOperation)
       * Intersection of Two Arrays
       * Union of Two Arrays
