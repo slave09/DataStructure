@@ -12,7 +12,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
       * [Sort](https://github.com/najm09/DataStructure/blob/master/Arrays/OperationsOnArrays/array_insertSort.c)
       * [Display](https://github.com/najm09/DataStructure/blob/master/Arrays/OperationsOnArrays/array_display.c)
   * #### [RecursiveArrays](https://github.com/najm09/DataStructure/tree/master/Arrays/RecursiveArrays)
-    * Implementation of Array using recursive functions.
+    * [Implementation of Array using recursive functions](https://github.com/najm09/DataStructure/blob/master/Arrays/RecursiveArrays/array_%20usingRecursion.c).
   * #### [SearchinginArrays](https://github.com/najm09/DataStructure/tree/master/Arrays/SearchingInArrays)
       * [Linear search](https://github.com/najm09/DataStructure/blob/master/Arrays/SearchingInArrays/array_linearSearch.c)
       * [Binary Search](https://github.com/najm09/DataStructure/blob/master/Arrays/SearchingInArrays/binarySearch_iterative.c)
@@ -25,22 +25,22 @@ This Repository is based on the course of **"Mastering Data structures and Algor
       * [Union of Two Arrays](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/arrays_union.c)
       * [Shift](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/array_shift.c) [Merge](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/arrays_merge.c) and [Reverse](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/array_reverse.c) Operations on the Array
 ### 2. [LinkList](https://github.com/najm09/DataStructure/tree/master/LinkedList)
-   Implementation of Linear, Doubly, Circular and circularDoubly Linked Lists.
+   Implementation of [Linear](https://github.com/najm09/DataStructure/blob/master/LinkedList/iterativeLinkedList/createListByinsert.c), [Doubly](https://github.com/najm09/DataStructure/blob/master/LinkedList/doublyLinkList.c), [Circular](https://github.com/najm09/DataStructure/blob/master/LinkedList/circularLinkListIterative.c) and [circularDoubly](https://github.com/najm09/DataStructure/blob/master/LinkedList/circularDoublyLinkList.c) Linked Lists.
    * #### [iterativeLinkedList](https://github.com/najm09/DataStructure/tree/master/LinkedList/iterativeLinkedList)
-        * Inserting node
-        * display Linklist
-        * count number of nodes
-        * Creation of sorted list
-        * addition operation
-        * Perform Linear Search in the list
+        * [Inserting node](https://github.com/najm09/DataStructure/blob/master/LinkedList/iterativeLinkedList/addition_on_linkedList_iterative.c)
+        * [display Linklist](https://github.com/najm09/DataStructure/blob/master/LinkedList/iterativeLinkedList/displaying_linkedList_iterative.c)
+        * [count number of nodes](https://github.com/najm09/DataStructure/blob/master/LinkedList/iterativeLinkedList/count_of_nodes.iterative.c)
+        * [sorted list](https://github.com/najm09/DataStructure/blob/master/LinkedList/iterativeLinkedList/insertInSortedList.c)
+        * [Linear Search](https://github.com/najm09/DataStructure/blob/master/LinkedList/iterativeLinkedList/linearSearch_iterative.c)
+        * [Perform Linear Search in the list]()
    * #### [operationsOnLinkedList](https://github.com/najm09/DataStructure/tree/master/LinkedList/operationsOnLinkedList)
-        * Check for sorted list
+        * [Check for sorted list](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/checkSort.c)
         * [Loop detection in a list](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/loopDetection.c)
         * [Merge two link lists](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/mergeTwoLinks.c)
         * [Reversing a link list](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/reversingLinks.c)
-        * Concatenation operation
-        * Remove duplicates
-        * Deletion of node
+        * [Concatenation operation](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/concatLinkLists.c)
+        * [Remove duplicates](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/removingDuplicates.c)
+        * [Deletion of node](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/linkedList_delete.c)
   * #### [recursiveLinkedList](https://github.com/najm09/DataStructure/tree/master/LinkedList/recursiveLinkedList)
     * Performing CRUD operations using recursion
   * #### [Student Challenge](https://github.com/najm09/DataStructure/tree/master/Stack)
@@ -48,10 +48,10 @@ This Repository is based on the course of **"Mastering Data structures and Algor
        * [Generation of sparse matrix using Linked List](https://github.com/najm09/DataStructure/blob/master/LinkedList/studentChallenge/sparseMatrix.c)
        * [Generation of Polynomial Linked List](https://github.com/najm09/DataStructure/blob/master/LinkedList/studentChallenge/polynomial.c)        
 ### 3. [Stack](https://github.com/najm09/DataStructure/tree/master/Stack)
-  * Stack Implementation code using Array as well as Link List
+  * Stack Implementation code using [Array](https://github.com/najm09/DataStructure/blob/master/Stack/StackArray.c) as well as [Link List](https://github.com/najm09/DataStructure/blob/master/Stack/StackLL.c)
   * [Application of Stack in infix to postfix Conversion](https://github.com/najm09/DataStructure/blob/master/Stack/application.c)
 ### 4. [Queue](https://github.com/najm09/DataStructure/tree/master/Queue)
-  * Implementation code for Queue using Array, Link List, Stack.
+  * Implementation code for Queue using [Array](https://github.com/najm09/DataStructure/blob/master/Queue/QueueArray.c), [Link List](https://github.com/najm09/DataStructure/blob/master/Queue/QueueLL.c), [Stack](https://github.com/najm09/DataStructure/blob/master/Queue/QueueStack.c).
   * [Circular Queue](https://github.com/najm09/DataStructure/blob/master/Queue/circularQueueArray.c)
   * [DEQueue](https://github.com/najm09/DataStructure/blob/master/Queue/DEQueue.c)
   * [Recursive Queue](https://github.com/najm09/DataStructure/blob/master/Queue/recursiveQueue.c)
