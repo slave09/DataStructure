@@ -1,4 +1,4 @@
-# DataStructure
+# Data Structures
 ### implementation of Datastructure in C Programming Language (Started as a beginner)
 This Repository is based on the course of **"Mastering Data structures and Algorithms using C and C++"** by **Abdul Bari sir**.  
 ## Directories Description
