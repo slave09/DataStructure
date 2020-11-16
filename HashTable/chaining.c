@@ -7,15 +7,6 @@
 
 #include<stdio.h>
 #include"chains.h"
-
-
-void printChain(struct Node *head){
-  while(head){
-    printf("%d\n",head->data );
-    head = head->next;
-  }
-}
-
 /*
   * @param key value of the key
   * @return new hash key
@@ -30,7 +21,6 @@ int hash(int value){
 void Insert(struct Node *Hash[], int value){
   int hash_key = hash(value);
   InsertSort(Hash[hash_key],value);
-  printChain(Hash[hash_key]);
 }
 /*
   * @param value the value to be searched
@@ -41,7 +31,6 @@ struct Node *search(struct Node *Hash[], int val){
   struct Node * hT = searchList(Hash[hash_key], val);
   return hT;
 }
-
 int main(){
   struct Node *Hash[10];
   for(int i = 0; i < 10; i++) Hash[i] = NULL;
