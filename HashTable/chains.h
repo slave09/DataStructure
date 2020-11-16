@@ -25,7 +25,7 @@ void InsertSort(struct Node *head, int value)
   if(head == NULL){
     head = node;
   }
-  if((head)->data > value){
+  if(head->data > value){
     node->next = head;
     head = node;
   }
