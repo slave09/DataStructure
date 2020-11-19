@@ -14,7 +14,7 @@ void createTree(){
 	struct Node *holder, *node;
 	int value;
 	struct Queue q;
-	createQ(&q);
+	createQ(&q,100);
 	printf("Enter root value : ");
 	scanf("%d", &value);
 	root = (struct Node *)malloc(sizeof(struct Node));
