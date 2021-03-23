@@ -69,9 +69,9 @@ This Repository is based on the course of **"Mastering Data structures and Algor
 * [Heapify](https://github.com/najm09/DataStructure/blob/master/Heap/heapify.c) method for faster heap creation
 * [Max heap](https://github.com/najm09/DataStructure/tree/master/Heap/MaxHeap)
 * [Min heap](https://github.com/najm09/DataStructure/tree/master/Heap/MinHeap)
-<!-- ### 9. [HashTable](https://github.com/najm09/DataStructure/tree/master/HashTable)
-  * [Chaining](https://github.com/najm09/DataStructure/blob/master/HashTable/chaining.c) -->
-### 9. [Advanced](https://github.com/najm09/DataStructure/tree/master/Advanced)
+### 9. [HashTable](https://github.com/najm09/DataStructure/tree/master/HashTable)
+  * [Chaining](https://github.com/najm09/DataStructure/blob/master/HashTable/chaining.cpp)
+### 10. [Advanced](https://github.com/najm09/DataStructure/tree/master/Advanced)
   * [Binary indexed tree](https://github.com/najm09/DataStructure/blob/master/Advanced/binaryIndexTree.cpp)
 
 ----------------------------------------------------------------------------------------------------------------
