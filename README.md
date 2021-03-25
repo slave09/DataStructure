@@ -71,6 +71,8 @@ This Repository is based on the course of **"Mastering Data structures and Algor
 * [Min heap](https://github.com/najm09/DataStructure/tree/master/Heap/MinHeap)
 ### 9. [HashTable](https://github.com/najm09/DataStructure/tree/master/HashTable)
   * [Chaining](https://github.com/najm09/DataStructure/blob/master/HashTable/chaining.cpp)
+  * [Linear Probing](https://github.com/najm09/DataStructure/blob/master/HashTable/linearProbing.cpp)
+  * [Quadratic Probing](https://github.com/najm09/DataStructure/blob/master/HashTable/quadraticProbing.cpp)
 ### 10. [Advanced](https://github.com/najm09/DataStructure/tree/master/Advanced)
   * [Binary indexed tree](https://github.com/najm09/DataStructure/blob/master/Advanced/binaryIndexTree.cpp)
 
