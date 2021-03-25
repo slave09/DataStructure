@@ -1,3 +1,8 @@
+/*
+  * Author : Fakhra najm <fnajm09@gmail.com>
+*/
+
+
 #include<stdio.h>
 #include<stdlib.h>
 
