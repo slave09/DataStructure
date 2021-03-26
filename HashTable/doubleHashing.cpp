@@ -45,7 +45,7 @@ void HashMap :: create(){
 	for(int key = 0; key < this -> size; ++key)
 		Array[key] = 0;
 
-	for(int key = this -> size; key >= 0; --	key){
+	for(int key = this -> size; key >= 0; --key){
 		if(isPrime(key)){
 			this -> doubleKey = key;
 			break;
