@@ -14,7 +14,7 @@ public:
 	void read();
 	void update(int val);
 	void Delete(int val);
-	int find(int val);
+	int search(int val);
 	int first_hash(int val);
 	int second_hash(int val);
 	int doubleHashing(int val);
@@ -103,9 +103,35 @@ void HashMap :: update(int val){
 	}
 }
 
+int HashMap :: search(int val){
+	int key = first_hash(val);
+	if(Array[key] == val) return key;
+	else{
+		int second_hash_key = second_hash(val);
+		int i = 0;
+
+		while(Array[key] != val){
+			if(Array[key] == 0) return -1;
+			key = (first_hash(val) + (i++) * (second_hash_key)) % size;
+		}
+	}
+	return key;
+}
+
 int main(){
+	int val, find;
 	HashMap map;
+
 	map.create();
 	map.read();
-	return 0;
+
+	cout << "Enter the value to be found:" << endl;
+	cin >> val;
+
+	find = map.search(val);
+
+	if(find == -1) cout << val << " NOT FOUND!" << endl;
+	else cout << val << " IS FOUNDED AT: " << find << endl;
+
+ 	return 0;
 }
