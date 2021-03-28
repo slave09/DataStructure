@@ -1,72 +1,71 @@
-#include <iostream>
-#define SIZE 10
+/*
+    Author : Fakhra Najm <fnajm09@gmail.com>
+    Topic : Hash Table implementation with Linear probing
+*/
 
+#include<bits/stdc++.h>
 using namespace std;
- 
-template <class T>
-void Print(T& vec, int n, string s){
-    cout << s << ": [" << flush;
-    for (int i=0; i<n; i++){
-        cout << vec[i] << flush;
-        if (i < n-1){
-            cout << ", " << flush;
-        }
-    }
-    cout << "]" << endl;
+
+class HashMap{
+private:
+    int size;
+    int *Array;
+public:
+    HashMap(){}
+    int hashkey(int val);
+    int probe(int val);
+    void create(int size);
+    void read();
+    void update(int val);
+    int Delete(int val);
+};
+
+
+int HashMap :: hashkey(int val){
+    return val % this -> size;
 }
- 
-int Hash(int key){
-    return key % SIZE;
-}
- 
-int LinearProbe(int H[], int key){
-    int idx = Hash(key);
+
+int HashMap :: probe(int val){
     int i = 0;
-    while (H[(idx+i) % SIZE] != 0){
-        i++;
-    }
-    return (idx + i) % SIZE;
+    int index = hashkey(val);
+    while(this -> Array[index] != 0)
+        index = (hashkey(val) + i++) % 10;
+    return index;
 }
- 
-void Insert(int H[], int key){
-    int idx = Hash(key);
- 
-    if (H[idx] != 0){
-        idx = LinearProbe(H, key);
+
+void HashMap :: create(int size){
+
+    this -> size = 2 * size + 1;
+
+    Array = new int[this -> size];
+    fill(Array + 0, Array + this -> size, 0);
+
+    cout << "Enter " << size << " data: " << endl;
+
+    while(size--){
+        int input_value;
+        cin >> input_value;
+        update(input_value);
     }
-    H[idx] = key;
 }
- 
-int Search(int H[], int key){
-    int idx = Hash(key);
-    int i = 0;
-    while (H[(idx+i) % SIZE] != key){
-        i++;
-        if (H[(idx + i) % SIZE] == 0){
-            return -1;
-        }
-    }
-    return (idx + i) % SIZE;
+
+void HashMap :: read(){
+    for(int key = 0; key < this -> size; ++key)
+        cout << this -> Array[key] << " ";
+    cout << endl;
 }
- 
- 
-int main() {
- 
-    int A[] = {26, 30, 45, 23, 25, 43, 74, 19, 29};
-    int n = sizeof(A)/sizeof(A[0]);
-    Print(A, n, " A");
- 
-    // Hash Table
-    int HT[10] = {0};
-    for (int i=0; i<n; i++){
-        Insert(HT, A[i]);
-    }
-    Print(HT, SIZE, "HT");
- 
-    int index = Search(HT, 25);
-    cout << "key found at: " << index << endl;
- 
-    index = Search(HT, 35);
-    cout << "key found at: " << index << endl;
+
+void HashMap :: update(int val){
+    int key = hashkey(val);
+
+    if(this -> Array[key] == 0)
+        this -> Array[key] = val;
+    else this -> Array[probe(val)] = val;
+}
+
+int main(){
+    HashMap map;
+    map.create(10);
+    map.read();
     return 0;
 }
