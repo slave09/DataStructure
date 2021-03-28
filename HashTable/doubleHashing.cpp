@@ -70,7 +70,7 @@ void HashMap :: read(){
 }
 
 int HashMap :: first_hash(int val){
-	return val % 10;
+	return val % size;
 }
 
 int HashMap :: second_hash(int val){
@@ -85,7 +85,7 @@ int HashMap :: doubleHashing(int val){
 	int i = 0;
 
 	while(this -> Array[index] != 0)
-		index = (first_hash_key + (i++) * (second_hash_key)) % 10;
+		index = (first_hash_key + (i++) * (second_hash_key)) % size;
 	
 	return index;
 }
