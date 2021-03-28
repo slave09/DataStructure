@@ -68,6 +68,5 @@ int main() {
  
     index = Search(HT, 35);
     cout << "key found at: " << index << endl;
- 
     return 0;
 }
