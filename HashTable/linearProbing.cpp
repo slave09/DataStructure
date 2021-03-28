@@ -23,20 +23,20 @@ public:
 
 
 int HashMap :: hashkey(int val){
-    return val % (this -> size - 1);
+    return val % size ;
 }
 
 int HashMap :: probe(int val){
     int i = 0;
     int index = hashkey(val);
-    while(this -> Array[index] != 0)
-        index = (hashkey(val) + i++) % (size - 1);
+    while(Array[index] != 0)
+        index = (hashkey(val) + i++) % (size);
     return index;
 }
 
 void HashMap :: create(int size){
 
-    this -> size = 2 * size + 1;
+    this -> size = 2 * size;
     cout << "the size of the Hash Table is " << this -> size << endl;
 
     Array = new int[this -> size];
@@ -52,17 +52,17 @@ void HashMap :: create(int size){
 }
 
 void HashMap :: read(){
-    for(int key = 0; key < this -> size; ++key)
-        cout << this -> Array[key] << " ";
+    for(int key = 0; key < size; ++key)
+        cout << Array[key] << " ";
     cout << endl;
 }
 
 void HashMap :: update(int val){
     int key = hashkey(val);
 
-    if(this -> Array[key] == 0)
-        this -> Array[key] = val;
-    else this -> Array[probe(val)] = val;
+    if(Array[key] == 0)
+        Array[key] = val;
+    else Array[probe(val)] = val;
 }
 
 void HashMap :: Delete(int val){
@@ -72,7 +72,7 @@ void HashMap :: Delete(int val){
         int i = 0;
         while(Array[key] != val){
             if(Array[key] == 0) return ;
-            key = (hashkey(val + i++)) % (size - 1);
+            key = (hashkey(val + i++)) % size;
         }
     }
     Array[key] = 0;
@@ -88,7 +88,7 @@ int HashMap :: search(int val){
         int i = 0;
         while(Array[key] != val){
             if(Array[key] == 0) return -1;
-            key = (hashkey(val) + i++) % (size - 1);
+            key = (hashkey(val) + i++) % size;
         }
     }
     return key;
