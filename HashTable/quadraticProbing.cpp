@@ -41,13 +41,13 @@ void HashMap :: read(){
 int HashMap :: probe(int val){
 	int i = 0, index = hashvalue(val);
 	while(this -> Arr[index] != 0){
-		index = (hashvalue(val) + (int)pow(++i,2)) % 10;
+		index = (hashvalue(val) + (int)pow(++i,2)) % (size - 1);
 	}
 	return index;
 }
 
 int HashMap :: hashvalue(int value){
-	return value % 10;
+	return value % (size - 1);
 }
 
 void HashMap :: update(int val){
@@ -69,7 +69,7 @@ int HashMap :: find(int val){
 	int index = hashvalue(val);
 	while(Arr[index] != 0 ){
 		if(this -> Arr[index] == val) return index;
-		index = (hashvalue(val) + (int)pow(++i,2)) % 10;
+		index = (hashvalue(val) + (int)pow(++i,2)) % (size - 1);
 	}
 
 	return -1;
