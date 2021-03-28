@@ -1,3 +1,9 @@
+/*
+ * Author : Fakhra Najm 
+ * Email  : fnajm09@gmail.com
+ * Topic  : Hash Table Implementation using "Double Hashing"
+ * */
+
 #include<iostream>
 using namespace std;
 

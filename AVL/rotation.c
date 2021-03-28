@@ -1,9 +1,9 @@
 /*
-  Author: Fakhra Najm
-  Email:  fnajm09@gmail.com
-  Topic: creating AVL tree using rotation
+  Author :  Fakhra Najm
+  Email  :  fnajm09@gmail.com
+  Topic  :  Rotation
 
-  Operation:
+  Operations:
     * createNode
     * insert
     * Inorder
@@ -30,6 +30,17 @@ struct Node{
   int height;
 
 }*root = NULL;
+
+int node_height(struct Node *node){
+
+  int left, right;
+
+  left = node && node->left ? node->left->height : 0;
+  right = node && node->right ? node->right->height : 0;
+
+  return left > right ? left+1 : right+1;
+}
+
 
 struct Node * LR_Rotation(struct Node *node){
   struct Node *node_left = node->left;
@@ -132,18 +143,6 @@ void Inorder(struct Node *root){
   }
 
 }
-
-
-int node_height(struct Node *node){
-
-  int left, right;
-
-  left = node && node->left ? node->left->height : 0;
-  right = node && node->right ? node->right->height : 0;
-
-  return left > right ? left+1 : right+1;
-}
-
 
 int Balance_factor(struct Node *node){
 
