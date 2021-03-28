@@ -22,6 +22,7 @@ public :
 	int probe(int val);
 	int hashvalue(int val);
 	void read();
+	void Delete(int val);
 };
 
 
@@ -75,9 +76,27 @@ int HashMap :: find(int val){
 	return -1;
 }
 
+void HashMap :: Delete(int val){
+
+	int key = hashvalue(val);
+
+	if(Arr[key] == val) Arr[key] = 0;
+
+	else{
+		int i = 0;
+		while(Arr[key] != val){
+
+			if(Arr[key] == 0) return;
+
+			key = (hashvalue(val) + (i)*(i++)) % (size - 1);
+		}
+		Arr[key] = 0;
+	}
+}
+
 int main(){
 
-	int size, element;
+	int size, element, remove_element;
 
 	cout << "Enter size of the data elements:" << endl;
 	cin >> size;
@@ -103,8 +122,16 @@ int main(){
 	cin >>  element;
 
 
-	if( map.find(element) != -1)  cout << "Founded at index " << map.find(element) << " " ;
-	else cout << "ELEMENT NOT FOUND !!!!";
+	if( map.find(element) != -1)  cout << "Founded at index " << map.find(element) << endl ;
+	else cout << "ELEMENT NOT FOUND !!!!" << endl;
+
+	cout << "Enter value to be deleted:" << endl;
+	cin >> remove_element;
+
+	map.Delete(remove_element);
+
+	cout << "After deleting " << remove_element << ":" << endl;
+	map.read();
 
 	return 0;
 } 
