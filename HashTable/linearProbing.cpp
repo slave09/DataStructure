@@ -17,25 +17,27 @@ public:
     void create(int size);
     void read();
     void update(int val);
-    int Delete(int val);
+    void Delete(int val);
+    int search(int val);
 };
 
 
 int HashMap :: hashkey(int val){
-    return val % this -> size;
+    return val % (this -> size - 1);
 }
 
 int HashMap :: probe(int val){
     int i = 0;
     int index = hashkey(val);
     while(this -> Array[index] != 0)
-        index = (hashkey(val) + i++) % 10;
+        index = (hashkey(val) + i++) % (size - 1);
     return index;
 }
 
 void HashMap :: create(int size){
 
     this -> size = 2 * size + 1;
+    cout << "the size of the Hash Table is " << this -> size << endl;
 
     Array = new int[this -> size];
     fill(Array + 0, Array + this -> size, 0);
@@ -63,9 +65,61 @@ void HashMap :: update(int val){
     else this -> Array[probe(val)] = val;
 }
 
+void HashMap :: Delete(int val){
+    int key = hashkey(val);
+    if(Array[key] == val) Array[key] = 0;
+    else{
+        int i = 0;
+        while(Array[key] != val){
+            if(Array[key] == 0) return ;
+            key = (hashkey(val + i++)) % (size - 1);
+        }
+    }
+    Array[key] = 0;
+    return ;
+}
+
+int HashMap :: search(int val){
+    int key = hashkey(val);
+
+    if(Array[key] == val) return key;
+
+    else{
+        int i = 0;
+        while(Array[key] != val){
+            if(Array[key] == 0) return -1;
+            key = (hashkey(val) + i++) % (size - 1);
+        }
+    }
+    return key;
+}
+
 int main(){
+    int remove, find, size;
+
     HashMap map;
-    map.create(10);
+
+    cout << "Enter size:" << endl;
+    cin >> size;
+    map.create(size);
+
+    cout << "Created Hash table: " << endl;
     map.read();
+
+    cout << "Enter Value to be deleted:" << endl;
+    cin >> remove;
+
+    map.Delete(remove);
+    cout << "After deleting " << remove << ":" << endl;
+    map.read();
+
+    cout << "Enter value to be searched:" << endl;
+    cin >> find; 
+
+    int search = map.search(find);
+
+    if(search != -1) cout << find << " is found at " << search << endl;
+    else cout << find << " not found ! " << endl;
+
     return 0;
 }
