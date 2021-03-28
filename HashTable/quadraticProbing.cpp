@@ -28,49 +28,49 @@ public :
 
 void HashMap :: create(int size){
 	this -> size = size;
-	this -> Arr = new int[size];
+	Arr = new int[size];
 	for(int i = 0; i < size; ++i)
 		Arr[i] = 0;
 }
 
 void HashMap :: read(){
-	for(int index = 0; index < this -> size; ++index)
-		cout << this -> Arr[index] << " ";
+	for(int index = 0; index < size; ++index)
+		cout << Arr[index] << " ";
 	cout << endl;
 }
 
 int HashMap :: probe(int val){
 	int i = 0, index = hashvalue(val);
-	while(this -> Arr[index] != 0){
-		index = (hashvalue(val) + (int)pow(++i,2)) % (size - 1);
+	while(Arr[index] != 0){
+		index = (hashvalue(val) + (int)pow(++i,2)) % size ;
 	}
 	return index;
 }
 
 int HashMap :: hashvalue(int value){
-	return value % (size - 1);
+	return value % size ;
 }
 
 void HashMap :: update(int val){
 
 	int indx = hashvalue(val);
 
-	if(this -> Arr[indx] == 0) 
-		this -> Arr[indx] = val;
+	if(Arr[indx] == 0) 
+		Arr[indx] = val;
 
 	else{
 		indx = probe(val);
-		this -> Arr[indx] = val;
+		Arr[indx] = val;
 	}
 
 }
 
 int HashMap :: find(int val){
-	int i = 0;
 	int index = hashvalue(val);
+	int i = 0;
 	while(Arr[index] != 0 ){
-		if(this -> Arr[index] == val) return index;
-		index = (hashvalue(val) + (int)pow(++i,2)) % (size - 1);
+		if(Arr[index] == val) return index;
+		index = (hashvalue(val) + (i)*(i++)) % size ;
 	}
 
 	return -1;
@@ -88,7 +88,7 @@ void HashMap :: Delete(int val){
 
 			if(Arr[key] == 0) return;
 
-			key = (hashvalue(val) + (i)*(i++)) % (size - 1);
+			key = (hashvalue(val) + (i)*(i++)) % size;
 		}
 		Arr[key] = 0;
 	}
@@ -101,10 +101,10 @@ int main(){
 	cout << "Enter size of the data elements:" << endl;
 	cin >> size;
 
-	cout << "The size of hash table is " << 2 * size + 1 << endl;
+	cout << "The size of hash table is " << 2 * size << endl;
 
 	HashMap map;
-	map.create(size * 2 + 1);
+	map.create(size * 2);
 
 	cout << "Enter elements:" << endl;
 
