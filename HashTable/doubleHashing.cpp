@@ -1,7 +1,7 @@
 /*
  * Author : Fakhra Najm 
  * Email  : fnajm09@gmail.com
- * Topic  : Hash Table Implementation using "Double Hashing"
+ * Topic  : Hash Table Implementation : "Double Hashing"
  * */
 
 #include<iostream>
