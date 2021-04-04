@@ -1,6 +1,14 @@
 /*
     Author : Fakhra Najm <fnajm09@gmail.com>
     Topic : Hash Table implementation with Linear probing
+
+    * Operations:
+	* create
+	* read
+	* update
+	* Delete
+	* probe
+	* hashkey
 */
 
 #include<bits/stdc++.h>
