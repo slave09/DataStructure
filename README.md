@@ -25,14 +25,6 @@ This Repository is based on the course of **"Mastering Data structures and Algor
       * [Union of Two Arrays](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/arrays_union.c)
       * [Shift](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/array_shift.c) [Merge](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/arrays_merge.c) and [Reverse](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/array_reverse.c) Operations on the Array
 ### 2. [LinkList](https://github.com/najm09/DataStructure/tree/master/LinkedList)
-   Implementation of [Linear](https://github.com/najm09/DataStructure/blob/master/LinkedList/iterativeLinkedList/createListByinsert.c), [Doubly](https://github.com/najm09/DataStructure/blob/master/LinkedList/doublyLinkList.c), [Circular](https://github.com/najm09/DataStructure/blob/master/LinkedList/circularLinkListIterative.c) and [circularDoubly](https://github.com/najm09/DataStructure/blob/master/LinkedList/circularDoublyLinkList.c) Linked Lists.
-   * #### [iterativeLinkedList](https://github.com/najm09/DataStructure/tree/master/LinkedList/iterativeLinkedList)
-        * [Inserting node](https://github.com/najm09/DataStructure/blob/master/LinkedList/iterativeLinkedList/addition_on_linkedList_iterative.c)
-        * [display Linklist](https://github.com/najm09/DataStructure/blob/master/LinkedList/iterativeLinkedList/displaying_linkedList_iterative.c)
-        * [count number of nodes](https://github.com/najm09/DataStructure/blob/master/LinkedList/iterativeLinkedList/count_of_nodes.iterative.c)
-        * [sorted list](https://github.com/najm09/DataStructure/blob/master/LinkedList/iterativeLinkedList/insertInSortedList.c)
-        * [Linear Search](https://github.com/najm09/DataStructure/blob/master/LinkedList/iterativeLinkedList/linearSearch_iterative.c)
-        * [Perform Linear Search in the list]()
    * #### [operationsOnLinkedList](https://github.com/najm09/DataStructure/tree/master/LinkedList/operationsOnLinkedList)
         * [Check for sorted list](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/checkSort.c)
         * [Loop detection in a list](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/loopDetection.c)
@@ -41,8 +33,6 @@ This Repository is based on the course of **"Mastering Data structures and Algor
         * [Concatenation operation](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/concatLinkLists.c)
         * [Remove duplicates](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/removingDuplicates.c)
         * [Deletion of node](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/linkedList_delete.c)
-  * #### [recursiveLinkedList](https://github.com/najm09/DataStructure/tree/master/LinkedList/recursiveLinkedList)
-    * Performing CRUD operations using recursion
   * #### [Student Challenge](https://github.com/najm09/DataStructure/tree/master/Stack)
        * [Finding Middle element in a list](https://github.com/najm09/DataStructure/blob/master/LinkedList/studentChallenge/middleElement.c)
        * [Generation of sparse matrix using Linked List](https://github.com/najm09/DataStructure/blob/master/LinkedList/studentChallenge/sparseMatrix.c)
