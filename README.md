@@ -33,7 +33,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
         * [Concatenation operation](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/concatLinkLists.c)
         * [Remove duplicates](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/removingDuplicates.c)
         * [Deletion of node](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/linkedList_delete.c)
-  * #### [Student Challenge](https://github.com/najm09/DataStructure/tree/master/Stack)
+  * #### [Student Challenge](https://github.com/najm09/DataStructure/tree/master/LinkedList/studentChallenge)
        * [Finding Middle element in a list](https://github.com/najm09/DataStructure/blob/master/LinkedList/studentChallenge/middleElement.c)
        * [Generation of sparse matrix using Linked List](https://github.com/najm09/DataStructure/blob/master/LinkedList/studentChallenge/sparseMatrix.c)
        * [Generation of Polynomial Linked List](https://github.com/najm09/DataStructure/blob/master/LinkedList/studentChallenge/polynomial.c)        
