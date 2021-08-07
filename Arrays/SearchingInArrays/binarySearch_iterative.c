@@ -29,7 +29,7 @@ int binarySearch(struct Array arr,int key){
 		else if(arr.A[mid]<key)
 			low=mid+1;
 		else 
-			return high=mid-1;
+			high=mid-1;
 
 	}
 	return -1;
