@@ -19,6 +19,7 @@ public:
 	TreeNode *getRoot(){return root;}
 
 	void inorderTraversal(TreeNode *root);
+	void preorderTraversal(TreeNode *root);
 };
 
 BinaryTree :: BinaryTree(){
@@ -74,6 +75,8 @@ BinaryTree :: BinaryTree(){
 void BinaryTree :: inorderTraversal(TreeNode *root){
 	stack<TreeNode *>nodes;
 
+	if(!root ) return;
+
 	nodes.push(root);
 	root = root -> left;
 
@@ -90,9 +93,31 @@ void BinaryTree :: inorderTraversal(TreeNode *root){
 	}
 }
 
+void BinaryTree :: preorderTraversal(TreeNode *root){
+	stack<TreeNode *>nodes;
+
+	if(! root) return;
+
+	cout << root -> val << " ";
+	nodes.push(root);
+	root = root -> left;
+
+	while(!nodes.empty() || root){
+		if(root){
+			cout << root -> val;
+			nodes.push(root);
+			root = root -> left;
+		}
+		else{
+			root = nodes.top() -> right;
+			nodes.pop();
+		}
+	}
+}
+
 int main(){
 	BinaryTree tree;
-	tree.inorderTraversal(tree.getRoot());
+	tree.preorderTraversal(tree.getRoot());
 	return 0;
 }
 
