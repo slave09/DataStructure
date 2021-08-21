@@ -11,9 +11,10 @@ class BinaryTree{
 		TreeNode *right;
 	};
 
-	TreeNode *root;
 
 public:
+
+	TreeNode *root;
 
 	BinaryTree();
 
@@ -29,6 +30,8 @@ public:
 	int getSingleDegreeNodes(TreeNode *root);
 	int getSecondDegreeNodes(TreeNode *root);
 	int getNonLeafNodes(TreeNode *root);
+
+	friend void inorderTraversal(TreeNode *root);
 };
 
 int main(){
@@ -182,3 +185,5 @@ int BinaryTree :: getNonLeafNodes(TreeNode *root){
 		return getNonLeafNodes(root -> left ) + getNonLeafNodes(root -> right) + 1;
 	return getNonLeafNodes(root -> left ) + getNonLeafNodes(root -> right);
 }
+
+#endif
