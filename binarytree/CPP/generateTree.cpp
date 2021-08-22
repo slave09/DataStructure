@@ -1,5 +1,5 @@
 /*
-	Topic : generating tree from traversals
+	Topic : generating tree from preorder and inorder traversals
 	Link : "https://ideone.com/GD10kh"
 */
 
@@ -44,7 +44,7 @@ int Tree :: search(int arr[], int begin, int end, int val){
 TreeNode * Tree :: generateTreeFromTraversal(int inorder[], int preorder[], int begin, int end){
 	static int index = 0;
 
-	if(begin > end) return NULL;
+	if(index > end || begin > end) return NULL;
 
 	TreeNode *node = new TreeNode(preorder[index++]);
 
@@ -72,6 +72,5 @@ int main(){
 	TreeNode *root = binarytree.generateTreeFromTraversal(inorder, preorder, 0, 8);
 	binarytree.preorder(root);
 	cout << endl;
-
 	return 0;
 }
