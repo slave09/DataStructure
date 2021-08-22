@@ -1,3 +1,12 @@
+/*
+	* Topic : Iterative binary tree traversal
+		1. Inorder
+		2. Preorder
+		3. Postorder
+		4. Leveloreder
+		5. PostOrder using one stack
+*/
+
 #include<iostream>
 #include <queue>
 #include <stack>
@@ -20,7 +29,17 @@ public:
 
 	void inorderTraversal(TreeNode *root);
 	void preorderTraversal(TreeNode *root);
+	void postorderTraversal(TreeNode *root);
+	void levelorderTraversal(TreeNode *root);
+	void postorder(TreeNode *root);
+
 };
+
+int main(){
+	BinaryTree tree;
+	tree.postorder(tree.getRoot());
+	return 0;
+}
 
 BinaryTree :: BinaryTree(){
 	queue<TreeNode *>TreeNodes;
@@ -113,11 +132,72 @@ void BinaryTree :: preorderTraversal(TreeNode *root){
 			nodes.pop();
 		}
 	}
+} 
+
+void BinaryTree :: levelorderTraversal(TreeNode *root){
+	queue<TreeNode*>nodes;
+
+	nodes.push(root);
+
+	while(!nodes.empty()){
+		
+		TreeNode *curr = nodes.front();
+		nodes.pop();
+
+		if(curr){
+			cout << curr -> val << " ";
+			nodes.push(curr -> left);
+			nodes.push(curr -> right);
+		}
+
+	}
 }
 
-int main(){
-	BinaryTree tree;
-	tree.preorderTraversal(tree.getRoot());
-	return 0;
+void BinaryTree :: postorderTraversal(TreeNode *root){
+	stack<TreeNode *>childeren;
+	stack<TreeNode *>nodes;
+
+	childeren.push(root);
+
+	while(!childeren.empty()){
+		TreeNode *node = childeren.top();
+		childeren.pop();
+		nodes.push(node);
+		if(node -> left) childeren.push(node -> left);
+		if(node -> right) childeren.push(node -> right);
+	}
+
+	while(!nodes.empty()){
+		cout << nodes.top() -> val << " ";
+		nodes.pop();
+	}
+
+	cout << endl;
 }
 
+void BinaryTree :: postorder(TreeNode *root){
+	if(!root) return;
+	
+	stack<TreeNode *>nodes;
+
+	nodes.push(root);
+	root = root -> left;
+
+	while(!nodes.empty() || root){
+		if(root){
+			nodes.push(root);
+			root = root -> left;
+		}
+		else{
+			root = nodes.top() -> right;
+			if(!root){
+				TreeNode *last_visited_node = root;
+				while(!nodes.empty() && nodes.top() -> right == last_visited_node){
+					last_visited_node = nodes.top();
+					nodes.pop();
+					cout << last_visited_node -> val << " ";
+				}
+			}
+		}
+	}
+}

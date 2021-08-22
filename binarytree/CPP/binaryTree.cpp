@@ -21,7 +21,6 @@ public:
 	void preorder(TreeNode *root);
 	void inorder(TreeNode *root);
 	void postorder(TreeNode *root);
-	void levelorder();
 	
 	TreeNode *getRoot(){return root;}
 	int getHeight(TreeNode *root);
@@ -30,8 +29,6 @@ public:
 	int getSingleDegreeNodes(TreeNode *root);
 	int getSecondDegreeNodes(TreeNode *root);
 	int getNonLeafNodes(TreeNode *root);
-
-	friend void inorderTraversal(TreeNode *root);
 };
 
 int main(){
@@ -130,24 +127,7 @@ void BinaryTree :: preorder(TreeNode *root){
 	preorder(root -> right); 
 }
 
-void BinaryTree :: levelorder(){
-	queue<TreeNode*>nodes;
 
-	nodes.push(root);
-
-	while(!nodes.empty()){
-		
-		TreeNode *curr = nodes.front();
-		nodes.pop();
-
-		if(curr){
-			cout << curr -> val << " ";
-			nodes.push(curr -> left);
-			nodes.push(curr -> right);
-		}
-
-	}
-}
 
 int BinaryTree :: getHeight(TreeNode *root){
 	if(!root || (!root -> left && !root -> right)) return 0;
@@ -185,5 +165,3 @@ int BinaryTree :: getNonLeafNodes(TreeNode *root){
 		return getNonLeafNodes(root -> left ) + getNonLeafNodes(root -> right) + 1;
 	return getNonLeafNodes(root -> left ) + getNonLeafNodes(root -> right);
 }
-
-#endif
