@@ -51,8 +51,8 @@ This Repository is based on the course of **"Mastering Data structures and Algor
   * [Post Order Traversal using one stack without recursion](https://github.com/najm09/DataStructure/blob/master/binarytree/C/postorder.c)
   * [Recursive Inorder, Postorder and Preorder traversal](https://github.com/najm09/DataStructure/blob/master/binarytree/C/create_tree.c)
 ### 6. [BST](https://github.com/najm09/DataStructure/tree/master/BST)
-  * [Generation of Binary search tree and various operations on it](https://github.com/najm09/DataStructure/blob/master/BST/main.c)
-  * [Recursive](https://github.com/najm09/DataStructure/blob/master/BST/recursive.c) implementation of binary search tree
+  * [Operations Binary search tree](https://github.com/najm09/DataStructure/blob/master/BST/C/main.c)
+  * [Recursive](https://github.com/najm09/DataStructure/blob/master/BST/C/recursive.c) implementation of binary search tree
 ### 7. [AVL](https://github.com/najm09/DataStructure/tree/master/AVL)
   * Performing [Rotation](https://github.com/najm09/DataStructure/tree/master/AVL) while Generation of BST
 ### 8. [Heap](https://github.com/najm09/DataStructure/tree/master/Heap)
