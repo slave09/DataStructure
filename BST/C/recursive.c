@@ -85,7 +85,7 @@ struct Node *Delete(struct Node *node, int key){
   struct Node *temp;
   if(node == NULL) 
   return NULL;
-  if(! node->left && ! node->right){
+  if(!node->left && ! node->right && nodes -> data == key){
     if(node == root)
       root = NULL;
     free(node);
@@ -107,7 +107,7 @@ struct Node *Delete(struct Node *node, int key){
     else{
       temp = successor(node->right);
       node->data = temp->data;
-      node->right = Delete(node->right, temp->data);
+      node->right = Delete( node -> right, temp->data);
     }
   }
   return node;
