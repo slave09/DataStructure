@@ -33,9 +33,9 @@ struct Node * insert(struct Node *node, int value){
     return createNode(temp, value);
   }
   if(node->data > value)
-  node->left = insert(node->left, value);
+    node->left = insert(node->left, value);
   else if(node->data < value)
-  node->right = insert(node->right, value);
+    node->right = insert(node->right, value);
   return node;
 }
 
@@ -84,7 +84,7 @@ struct Node* successor(struct Node *root){
 struct Node *Delete(struct Node *node, int key){
   struct Node *temp;
   if(node == NULL) 
-  return NULL;
+    return NULL;
   if(!node->left && ! node->right && nodes -> data == key){
     if(node == root)
       root = NULL;
@@ -123,8 +123,8 @@ int main(){
   inorder(root);
   result = search(root, 10); 
   if(result)
-  printf("\nelement %d Found\n",result->data);
+    printf("\nelement %d Found\n",result->data);
   else
-  printf("\nelement Not found!\n");
+    printf("\nelement Not found!\n");
   return 0;
 }
