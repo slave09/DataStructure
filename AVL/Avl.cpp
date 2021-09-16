@@ -15,13 +15,18 @@ class AVL{
 	TreeNode *root;
 public:
 	AVL(vector<int>values);
+
 	TreeNode *getRoot(){return this -> root;}
 	TreeNode *createNode(int val){return new TreeNode(val);}
 
 	int getHeight(TreeNode *root);
 	int getBalanceFactor(TreeNode *root);
 
-	TreeNode * insertNode(TreeNode *root,int val);
+	TreeNode * insertNode(TreeNode *root, int val);
+	TreeNode * deleteNode(TreeNode *root, int val);
+	TreeNode * inorderPredecessor(TreeNode *root);
+	TreeNode * inorderSuccessor(TreeNode *root);
+
 	TreeNode * rotate(TreeNode *root, int balanceFactor);
 	TreeNode * LL_Rotation(TreeNode *root);
 	TreeNode * RR_Rotation(TreeNode *root);
@@ -35,12 +40,35 @@ public:
 	~AVL(){delete root;}
 };
 
+
+vector<int>values;
+int val;
+
+void getInput(){
+	values.clear();
+	int nodes;
+	cout << "Enter number of nodes : ";
+	cin >> nodes;
+	while(nodes--){
+		int val;
+		cin >> val;
+		values.push_back(val);
+	}
+}
+
 int main(){
-	AVL tree({1,2,3,4,5,6,15,23,11,3,2,33,16});
-	cout << tree.getBalanceFactor(tree.getRoot()) << endl;
+	getInput();
+	AVL tree(values);
+	cout << "Root : " << tree.getRoot() -> val << endl;
 	tree.printInorder(tree.getRoot());
 	cout << endl;
-	tree.printPreorder(tree.getRoot());
+	cout << "Enter value to delete : ";
+	cin >> val;
+	tree.deleteNode(tree.getRoot(), val);
+	tree.printInorder(tree.getRoot());
+	cout << endl;
+	cout << "Balance factor of root after deletion : ";
+	cout << tree.getBalanceFactor(tree.getRoot()) << endl;
 	return 0;
 }
 
@@ -63,9 +91,39 @@ TreeNode* AVL :: insertNode(TreeNode *root, int val){
 	return root;
 }
 
+TreeNode * AVL :: deleteNode(TreeNode *root, int val){
+	if(!root) return root;
+	if(!root -> left && !root -> right && val == root -> val){
+		if(root == this -> root) this -> root = NULL;
+		delete(root);
+		return NULL;
+	}
+	if(root -> val > val) 
+		root -> left = deleteNode(root -> left, val);
+	else if(root -> val < val)
+		root -> right = deleteNode(root -> right, val);
+	else{
+		int leftSubHeight = getHeight(root -> left);
+		int rightSubHeight = getHeight(root -> right);
+
+		if(leftSubHeight > rightSubHeight){
+			TreeNode* predecessor = inorderPredecessor(root -> left);
+			root -> val = predecessor -> val;
+			root -> left = deleteNode(root -> left, predecessor -> val);
+		}
+		else{
+			TreeNode* successor = inorderSuccessor(root -> right);
+			root -> val = successor -> val;
+			root -> right = deleteNode(root -> right, successor -> val);
+		}
+	}
+	root = rotate(root, getBalanceFactor(root));
+	return root;
+}
+
 int AVL :: getHeight(TreeNode *root){
 	if(!root) return 0;
-	if(!root -> left && !root -> right) return 0;
+	// if(!root -> left && !root -> right) return 1;
 	return max(getHeight(root -> left), getHeight(root -> right)) + 1;
 }
 
@@ -116,7 +174,7 @@ TreeNode * AVL :: RL_Rotation(TreeNode *root){
 void AVL :: printInorder(TreeNode *root){
 	if(!root) return;
 	printInorder(root -> left);
-	cout << root -> val << " ";
+	cout << root -> val << " " << getBalanceFactor(root) << endl;
 	printInorder(root -> right);
 }
 
@@ -139,4 +197,16 @@ void AVL :: levelorderTraversal(TreeNode *root){
 		}
 
 	}
+}
+
+TreeNode * AVL :: inorderPredecessor(TreeNode *root){
+	while(root && root -> right)
+		root = root -> right;
+	return root;	
+}
+
+TreeNode * AVL :: inorderSuccessor(TreeNode *root){
+	while(root && root -> left)
+		root = root -> left;
+	return root;	
 }
