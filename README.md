@@ -1,5 +1,5 @@
 # Data Structures
-### implementation of Datastructure in C/C++ Programming Language (Started as a beginner)
+### implementation of Datastructure in C/C++ Programming Language.
 This Repository is based on the course of **"Mastering Data structures and Algorithms using C and C++"** by **Abdul Bari sir**.  
 ## Directories Description
 ### 1. [Arrays](https://github.com/najm09/DataStructure/tree/master/Arrays)
@@ -56,9 +56,9 @@ This Repository is based on the course of **"Mastering Data structures and Algor
 ### 7. [AVL](https://github.com/najm09/DataStructure/tree/master/AVL)
   * Performing [Rotation](https://github.com/najm09/DataStructure/tree/master/AVL) while Generation of BST
 ### 8. [Heap](https://github.com/najm09/DataStructure/tree/master/Heap)
-* [Heapify](https://github.com/najm09/DataStructure/blob/master/Heap/heapify.c) method for faster heap creation
-* [Max heap](https://github.com/najm09/DataStructure/tree/master/Heap/MaxHeap)
-* [Min heap](https://github.com/najm09/DataStructure/tree/master/Heap/MinHeap)
+* [Heapify](https://github.com/najm09/DataStructure/blob/master/Heap/C/heapify.c) method for faster heap creation
+* [Max heap](https://github.com/najm09/DataStructure/tree/master/Heap/C/MaxHeap)
+* [Min heap](https://github.com/najm09/DataStructure/tree/master/Heap/C/MinHeap)
 ### 9. [HashTable](https://github.com/najm09/DataStructure/tree/master/HashTable)
   * [Chaining](https://github.com/najm09/DataStructure/blob/master/HashTable/chaining.cpp)
   * [Linear Probing](https://github.com/najm09/DataStructure/blob/master/HashTable/linearProbing.cpp)
