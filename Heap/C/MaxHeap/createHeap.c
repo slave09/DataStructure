@@ -90,7 +90,7 @@ void Print()
 
 int Delete(int last_index)
 {
-  int x, i = 1, j = i*2,deleted_val=heap[1];
+  int i = 1, j = i*2,deleted_val=heap[1];
   heap[i] = heap[last_index];
   heap[last_index] = deleted_val;
   while ( j < last_index -1)
