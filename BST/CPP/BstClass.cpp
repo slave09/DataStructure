@@ -47,7 +47,7 @@ int main(){
 	cout << "Enter value to delete : ";
 	cin >> val;
 	bst.deleteNode(rootNode, val);
-	bst.printInorderTraversal(rootNode);
+	bst.printInorderTraversal(bst.getRootNode());
 	return 0;
 }
 
