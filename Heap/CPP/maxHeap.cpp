@@ -94,5 +94,3 @@ void Heap :: print(){
 	}
 	cout << endl;
 }
-
-
