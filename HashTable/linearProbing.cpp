@@ -1,8 +1,7 @@
 /*
-    Author : Fakhra Najm <fnajm09@gmail.com>
-    Topic : Hash Table implementation with Linear probing
-
-    * Operations:
+  Author : Fakhra Najm <fnajm09@gmail.com>
+  Topic : Hash Table implementation with Linear probing
+  * Operations:
 	* create
 	* read
 	* update
@@ -29,6 +28,7 @@ public:
   int search(int val);
 };
 
+
 HashMap :: HashMap(int size = 0){
   this -> size = 2 * size;
   Array = new int[this -> size];
@@ -36,13 +36,23 @@ HashMap :: HashMap(int size = 0){
   create();
 }
 
+
+/*
+  * @param val to be inserted in hash table
+  * @return hash key 
+*/
 int HashMap :: hashkey(int val){
   return val % size ;
 }
 
-// h'(x) = (h(x) + f(i)) % size 
+// hashkey => h'(x) = (h(x) + f(i)) % size 
 // where f(i) = i 
 // i = 0,1,2,3,4,...
+// whenever there is a collision increment i
+/*
+  * @param val in collision
+  * @return index available index
+*/
 
 int HashMap :: probe(int val){
   int i = 0;
