@@ -3,13 +3,10 @@
 	Hash table implementataion : Quadratic Probing
 */
 
-
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
 
-
 class HashMap{
-
 private:
 	int *Arr;
 	int size;
@@ -39,10 +36,16 @@ void HashMap :: read(){
 	cout << endl;
 }
 
+/*
+	* To avoid primary clustring of the keys
+	* probe = h'(x) = (h(x) + f(i)) % size
+	* f(i) = i^
+*/
 int HashMap :: probe(int val){
 	int i = 0, index = hashvalue(val);
 	while(Arr[index] != 0){
-		index = (hashvalue(val) + (int)pow(++i,2)) % size ;
+		index = (hashvalue(val) + i*i) % size ;
+		i++;
 	}
 	return index;
 }
@@ -52,17 +55,13 @@ int HashMap :: hashvalue(int value){
 }
 
 void HashMap :: update(int val){
-
 	int indx = hashvalue(val);
-
 	if(Arr[indx] == 0) 
 		Arr[indx] = val;
-
 	else{
 		indx = probe(val);
 		Arr[indx] = val;
 	}
-
 }
 
 int HashMap :: find(int val){
@@ -70,24 +69,19 @@ int HashMap :: find(int val){
 	int i = 0;
 	while(Arr[index] != 0 ){
 		if(Arr[index] == val) return index;
-		index = (hashvalue(val) + (i)*(i++)) % size ;
+		index = (hashvalue(val) + i*i) % size ;
+		i++;
 	}
-
 	return -1;
 }
 
 void HashMap :: Delete(int val){
-
 	int key = hashvalue(val);
-
 	if(Arr[key] == val) Arr[key] = 0;
-
 	else{
 		int i = 0;
 		while(Arr[key] != val){
-
 			if(Arr[key] == 0) return;
-
 			key = (hashvalue(val) + (i)*(i++)) % size;
 		}
 		Arr[key] = 0;
@@ -95,43 +89,28 @@ void HashMap :: Delete(int val){
 }
 
 int main(){
-
 	int size, element, remove_element;
-
 	cout << "Enter size of the data elements:" << endl;
 	cin >> size;
-
 	cout << "The size of hash table is " << 2 * size << endl;
-
 	HashMap map;
 	map.create(size * 2);
-
 	cout << "Enter elements:" << endl;
-
 	for(int data = 0; data < size ; ++data){
 		int value;
 		cin >> value;
 		map.update(value);
 	}
-
-
 	cout << "Stored value : " << endl;
 	map.read();
-
 	cout << "Enter element to be found : " << endl ;
 	cin >>  element;
-
-
 	if( map.find(element) != -1)  cout << "Founded at index " << map.find(element) << endl ;
 	else cout << "ELEMENT NOT FOUND !!!!" << endl;
-
 	cout << "Enter value to be deleted:" << endl;
 	cin >> remove_element;
-
 	map.Delete(remove_element);
-
 	cout << "After deleting " << remove_element << ":" << endl;
 	map.read();
-
 	return 0;
 } 
