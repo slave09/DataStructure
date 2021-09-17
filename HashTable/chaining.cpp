@@ -24,7 +24,7 @@ public:
 };
 
 HashTable :: HashTable() {
-	HashArray = new Node* [10];
+	HashArray = new Node*[10];
 	for (int index = 0; index < 10; index++){
 		HashArray[index] = nullptr;
 	}
