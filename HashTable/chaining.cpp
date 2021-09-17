@@ -1,20 +1,21 @@
 #include <iostream>
-
 using namespace std;
 
-// Linked List node
-
 class Node{
-
 public:
 	int data;
 	Node* next;
+	Node(int val, Node *next);
 };
-// Hash Table
-class HashTable{
 
+Node :: Node(int val, Node *next){
+	this -> data = val;
+	this -> next = next;
+}
+
+class HashTable{
 public:
-	Node** HT;
+	Node** HashArray;
 	HashTable();
 	int hash(int key);
 	void Insert(int key);
@@ -22,10 +23,10 @@ public:
 	~HashTable();
 };
 
-HashTable::HashTable() {
-	HT = new Node* [10];
-	for (int i=0; i<10; i++){
-		HT[i] = nullptr;
+HashTable :: HashTable() {
+	HashArray = new Node* [10];
+	for (int index = 0; index < 10; index++){
+		HashArray[index] = nullptr;
 	}
 }
 
@@ -34,71 +35,69 @@ int HashTable::hash(int key) {
 }
 
 void HashTable::Insert(int key) {
-	int hIdx = hash(key);
-	Node* t = new Node;
-	t->data = key;
-	t->next = nullptr;
+	int hashKey = hash(key);
+	Node* node = new Node(key, nullptr);
 	// Case: No nodes in the linked list
-	if (HT[hIdx] == nullptr){
-		HT[hIdx] = t;
-	} else {
-		Node* p = HT[hIdx];
-		Node *q=HT[hIdx];
+	if(HashArray[hashKey] == nullptr){
+		HashArray[hashKey] = node;
+	} 
+	else {
+		Node *currNodeItr = HashArray[hashKey];
+		Node *lastNodeItr = HashArray[hashKey];
 		// Traverse to find insert position
-		while (p && p->data < key){
-			q=p;
-			p = p->next;
+		while (currNodeItr && currNodeItr -> data < key){
+			lastNodeItr = currNodeItr;
+			currNodeItr = currNodeItr -> next;
 		}
 		// Case: insert position is first
-		if (q == HT[hIdx]){
-			t->next = HT[hIdx];
-			HT[hIdx] = t;
-		} else {
-			t->next = q->next;
-			q->next = t;
+		if(lastNodeItr == HashArray[hashKey]){
+			node -> next = HashArray[hashKey];
+			HashArray[hashKey] = node;
+		} 
+		else {
+			node -> next = lastNodeItr -> next;
+			lastNodeItr -> next = node;
 		}
 	}
 }
 
 int HashTable::Search(int key) {
-	int hIdx = hash(key);
-	Node* p = HT[hIdx];
-	while (p){
-		if (p->data == key){
-			return p->data;
+	int hashKey = hash(key);
+	Node* currNodeItr = HashArray[hashKey];
+	while (currNodeItr){
+		if (currNodeItr -> data == key){
+			return currNodeItr -> data;
 		}
-		p = p->next;
+		currNodeItr = currNodeItr -> next;
 	}
 	return -1;
 }
 
 HashTable::~HashTable() {
-	for (int i=0; i<10; i++){
-		Node* p = HT[i];
-		while (HT[i]){
-			HT[i] = HT[i]->next;
-			delete p;
-			p = HT[i];
+	for (int index = 0; index < 10; index++){
+		Node* currNodeItr = HashArray[index];
+		while (HashArray[index]){
+			HashArray[index] = HashArray[index] -> next;
+			delete currNodeItr;
+			currNodeItr = HashArray[index];
 		}
 	}
-	delete [] HT;
+	delete []HashArray;
 }
 
 int main() {
+	int key, value;
 	int A[] = {16, 12, 25, 39, 6, 122, 5, 68, 75};
-	int n = sizeof(A)/sizeof(A[0]);
-	HashTable H;
-	for (int i=0; i<n; i++){
-		H.Insert(A[i]);
+	int size = sizeof(A)/sizeof(A[0]);
+	HashTable map;
+	for (int index = 0; index < size; index++){
+		map.Insert(A[index]);
 	}
-	cout << "Successful Search" << endl;
-	int key = 6;
-	int value = H.Search(key);
+	key = 6;
+	value = map.Search(key);
 	cout << "Key: " << key << ", Value: " << value << endl;
-	cout << "Unsuccessful Search" << endl;
 	key = 95;
-	value = H.Search(key);
+	value = map.Search(key);
 	cout << "Key: " << key << ", Value: " << value << endl;
-
 	return 0;
 }
