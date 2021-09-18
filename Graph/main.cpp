@@ -6,23 +6,20 @@
 		* DFS
 */
 
-#include<bits/stdc++.h>
+#include<iostream>
+#include <vector>
+#include <queue>
 using namespace std;
 
-
 void BFS (int adjacency_matrix[][7], int vertex, int vertices){
-
 	queue<int>queue;
 	vector<bool>is_vertex_visited(vertices, false);
-
 	queue.push(vertex);
 	is_vertex_visited[vertex] = true;
 	cout << vertex << " ";
-
 	while(!queue.empty()){
 		int row = queue.front();
 		queue.pop();
-
 		for(int col = 1; col <= vertices; ++col){
 			if(is_vertex_visited[col] == false && adjacency_matrix[row][col] == 1){
 				cout << col << " ";
@@ -48,20 +45,21 @@ void DFS(int adjacency_matrix[][7], int vertex, int vertices){
 
 int main(){
 	int G[7][7] = 
-	{{0,0,0,0,0,0,0},
-	{0,0,1,1,0,0,0},
-	{0,1,0,0,1,0,0},
-	{0,1,0,0,1,0,0},
-	{0,0,1,1,0,1,1},
-	{0,0,0,0,1,0,0},
-	{0,0,0,0,1,0,0}
-};
-int vertex;
-cout << "Enter vertex where to start : ";
-cin >> vertex;
-BFS(G, vertex, 7);
-cout << "Enter vertex where to start : ";
-cin >> vertex;
-DFS(G, vertex, 7);
-return 0;
+	{
+		{0,0,0,0,0,0,0},
+		{0,0,1,1,0,0,0},
+		{0,1,0,0,1,0,0},
+		{0,1,0,0,1,0,0},
+		{0,0,1,1,0,1,1},
+		{0,0,0,0,1,0,0},
+		{0,0,0,0,1,0,0}
+	};
+	int vertex;
+	cout << "Enter vertex where to start : ";
+	cin >> vertex;
+	BFS(G, vertex, 7);
+	cout << "Enter vertex where to start : ";
+	cin >> vertex;
+	DFS(G, vertex, 7);
+	return 0;
 }
