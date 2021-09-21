@@ -4,7 +4,6 @@
 using namespace std;
 
 #define inf INT_MAX
-
 class spanningTree{
 	int minimumCost;
 	// Matrix[row][col] = x is sthe cost of edge between row and col
