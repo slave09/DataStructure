@@ -6,6 +6,7 @@ using namespace std;
 #define inf INT_MAX
 
 class spanningTree{
+	int minimumCost;
 	// Matrix[row][col] = x is sthe cost of edge between row and col
 	vector<vector<int>>adjacencyMatrix; 
 	// Represents minimum cost edge between two vertex 
@@ -19,6 +20,7 @@ class spanningTree{
 	int vertex2;
 public:
 	spanningTree(vector<vector<int>>adjacencyMatrix);
+	int getMinimumCost(){return minimumCost;}
 	// Filling initial near edges at infinity
 	void fillNearEdges();
 	// Finds first minimum edge and store vertex into this -> vertex1 and this -> vertex2
@@ -123,7 +125,8 @@ void spanningTree :: printMinCostSpanningTree(){
 		cout << "[" << minCostArray[row][1] << "]";
 		cout << "\t" << "cost : " << totalCost << endl;
 	}
-	cout << "Total Cost : " << totalCost << endl;
+	// Minimum cost od edges to generate spanning tree
+	this -> minimumCost = totalCost;
 }
 
 int main(){
@@ -140,5 +143,6 @@ int main(){
 	};
 	spanningTree spanning(matrix);
 	spanning.printMinCostSpanningTree();
+	cout << "Total Cost : " << spanning.getMinimumCost() << endl;
 	return 0;
 }
