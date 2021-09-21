@@ -29,6 +29,7 @@ spanningTree :: spanningTree(vector<vector<int>>adjacencyMatrix){
 }
 
 void spanningTree :: findMin(){
+	if(vertices == 0) return;
 	int minCostEdge = inf;
 	// checking upper triangular matrix
 	// upper triangular and lower triangular represent same edges
@@ -44,6 +45,7 @@ void spanningTree :: findMin(){
 }
 
 void spanningTree :: updateEdgeCost(){
+	if(vertices == 0) return;
 	nearEdges[vertex1] = nearEdges[vertex2] = 0;
 	minCostArray.push_back({vertex1, vertex2});
 	for(int row = 1; row < vertices; ++row){
@@ -55,8 +57,8 @@ void spanningTree :: updateEdgeCost(){
 }
 
 void spanningTree :: generateMinCostSpanningTree(){
-	int minEdge = inf;
-	int row;
+	if(vertices == 0) return;
+	int minEdge = inf, row;
 	for(int vertex = 1; vertex < vertices - 1; ++vertex){
 		for(int index = 1; index < vertices; ++index){
 			if(nearEdges[index] == 0) continue;
@@ -71,6 +73,7 @@ void spanningTree :: generateMinCostSpanningTree(){
 }
 
 void spanningTree :: printMinCostSpanningTree(){
+	if(vertices == 0) return;
 	for(int row = 0; row < vertices; ++row){
 		for(auto vertex : minCostArray[row])
 			cout << vertex << " ";
