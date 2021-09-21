@@ -70,6 +70,14 @@ void spanningTree :: generateMinCostSpanningTree(){
 	}
 }
 
+void spanningTree :: printMinCostSpanningTree(){
+	for(int row = 0; row < vertices; ++row){
+		for(auto vertex : minCostArray[row])
+			cout << vertex << " ";
+	}
+	cout << endl;
+}
+
 int main(){
 	spanningTree spanning({});
 	return 0;
