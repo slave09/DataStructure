@@ -28,6 +28,7 @@ public:
 	// Finds minimum of nearEdges and store it in the minCostArray one by one
 	// Visited vertices are marked zero in the nearEdges Array 
 	void generateMinCostSpanningTree();
+	// Prints the spanning tree vertices
 	void printMinCostSpanningTree();
 };
 
@@ -41,7 +42,7 @@ spanningTree :: spanningTree(vector<vector<int>>adjacencyMatrix){
 }
 
 void spanningTree :: fillNearEdges(){
-	for(int index = 0; index < vertices - 1; ++index){
+	for(int index = 0; index < vertices; ++index){
 		nearEdges.push_back(inf);
 	}
 }
@@ -86,8 +87,9 @@ void spanningTree :: updateEdgeCost(){
 void spanningTree :: generateMinCostSpanningTree(){
 	// guard conditions
 	if(vertices == 0) return;
-	int minEdge = inf, row;
-	for(int vertex = 1; vertex < vertices; ++vertex){
+	// one edge is already visited int the beginning
+	for(int vertex = 1; vertex < vertices - 1; ++vertex){
+		int minEdge = inf, row;
 		for(int index = 1; index < vertices; ++index){
 			if(nearEdges[index] == 0) continue;
 			if(adjacencyMatrix[index][nearEdges[index]] < minEdge){
@@ -112,23 +114,29 @@ void spanningTree :: generateMinCostSpanningTree(){
 
 void spanningTree :: printMinCostSpanningTree(){
 	if(vertices == 0) return;
-	for(int row = 0; row < vertices - 1; ++row){
-		for(auto vertex : minCostArray[row])
-			cout << vertex << " ";
-		cout << endl;
+	int totalCost = 0;
+	// Number of edges in spanning tree is |V - 2|
+	for(int row = 0; row < vertices - 2; ++row){
+		totalCost += adjacencyMatrix[minCostArray[row][0]][minCostArray[row][1]];
+		cout << "[" << minCostArray[row][0] << "]";
+		cout << " -----> ";
+		cout << "[" << minCostArray[row][1] << "]";
+		cout << "\t" << "cost : " << totalCost << endl;
 	}
+	cout << "Total Cost : " << totalCost << endl;
 }
 
 int main(){
+	// inf represents no edge between vertices
 	vector<vector<int>>matrix = {
-		{inf, inf, inf, inf, inf, inf, inf, inf},
-		{inf, inf, 25, inf, inf, inf, 5, inf},
-  	{inf, 25, inf, 12, inf, inf, inf, 10},
-    {inf, inf, 12, inf, 8, inf, inf, inf},
-  	{inf, inf, inf, 8, inf, 16, inf, 14},
-    {inf, inf, inf, inf, 16, inf, 20, 18},
-    {inf, 5, inf, inf, inf, 20, inf, inf},
-    {inf, inf, 10, inf, 14, 18, inf, inf},
+	{inf, inf, inf, inf, inf, inf, inf, inf},
+	{inf, inf, 25, inf, inf, inf, 5, inf},
+	{inf, 25, inf, 12, inf, inf, inf, 10},
+	{inf, inf, 12, inf, 8, inf, inf, inf},
+	{inf, inf, inf, 8, inf, 16, inf, 14},
+	{inf, inf, inf, inf, 16, inf, 20, 18},
+	{inf, 5, inf, inf, inf, 20, inf, inf},
+	{inf, inf, 10, inf, 14, 18, inf, inf},
 	};
 	spanningTree spanning(matrix);
 	spanning.printMinCostSpanningTree();
