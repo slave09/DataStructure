@@ -9,11 +9,11 @@ class DisjointSet{
 protected:
   // size : no of vertices
   vector<int>set; // detect cycle 
+  void Union(int node, int candidate);
+  int Find(int node);
 public:
   DisjointSet(){}
   DisjointSet(int size);
-  void Union(int node, int candidate);
-  int Find(int node);
 };
 
 class Kruskalas : public DisjointSet{
@@ -34,6 +34,14 @@ public:
   void generateMinCostSpanningTree();
   void printSpanningTree();
 };
+
+int main(){
+  vector<vector<int>>edges = {{1,2,25},{1,6,5},{2,3,12},{2,7,10},{3,4,8},{4,5,16},{4,7,14},{5,6,20},{5,7,18}};
+  Kruskalas algo(edges, 7);
+  cout << "Minimum Cost : " << algo.getMinimumCost() << endl;
+  algo.printSpanningTree();
+  return 0;
+}
 
 DisjointSet :: DisjointSet(int size){
   for(int index = 0; index <= size; ++index){
@@ -121,15 +129,7 @@ void Kruskalas :: printSpanningTree(){
   for(int index = 0; index < minCostArray.size(); ++index){
     cout << "[" << minCostArray[index][0] << "]";
     cout << "------> ";
-    cout << "[" << minCostArray[index][1] << "]";q
+    cout << "[" << minCostArray[index][1] << "]";
     cout << endl;
   }
-}
-
-int main(){
-  vector<vector<int>>edges = {{1,2,25},{1,6,5},{2,3,12},{2,7,10},{3,4,8},{4,5,16},{4,7,14},{5,6,20},{5,7,18}};
-  Kruskalas algo(edges, 7);
-  cout << "Minimum Cost : " << algo.getMinimumCost() << endl;
-  algo.printSpanningTree();
-  return 0;
 }
