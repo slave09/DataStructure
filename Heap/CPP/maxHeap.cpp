@@ -59,7 +59,7 @@ int Heap :: pop(){
 	int lastNodePtr = size() - 1;
 	int top = heap[parentNodePtr];
 	swap(heap[parentNodePtr], heap[lastNodePtr]);
-	lastNodePtr = size() - 1;
+	// lastNodePtr = size() - 1;
 	heap.pop_back();
 
 	while(childNodePtr + 1 < lastNodePtr){
