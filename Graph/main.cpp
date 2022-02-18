@@ -20,11 +20,11 @@ void BFS (int adjacency_matrix[][7], int vertex, int vertices){
 	while(!queue.empty()){
 		int row = queue.front();
 		queue.pop();
-		for(int col = 1; col <= vertices; ++col){
-			if(is_vertex_visited[col] == false && adjacency_matrix[row][col] == 1){
-				cout << col << " ";
-				queue.push(col);
-				is_vertex_visited[col] = true;
+		for(int neighbour = 1; neighbour <= vertices; ++neighbour){
+			if(is_vertex_visited[neighbour] == false && adjacency_matrix[row][neighbour] == 1){
+				cout << neighbour << " ";
+				queue.push(neighbour);
+				is_vertex_visited[neighbour] = true;
 			}
 		}
 	}
@@ -36,9 +36,9 @@ void DFS(int adjacency_matrix[][7], int vertex, int vertices){
 	if(is_vertex_visited[vertex] == false){
 		cout << vertex << " ";
 		is_vertex_visited[vertex] = true;
-		for(int col = 1; col < vertices; ++col){
-			if(adjacency_matrix[vertex][col] == 1 && is_vertex_visited[col] == false)
-				DFS(adjacency_matrix, col, vertices);
+		for(int neighbour = 1; neighbour < vertices; ++neighbour){
+			if(adjacency_matrix[vertex][neighbour] == 1 && is_vertex_visited[neighbour] == false)
+				DFS(adjacency_matrix, neighbour, vertices);
 		}
 	}
 }
