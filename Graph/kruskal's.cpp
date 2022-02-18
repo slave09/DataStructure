@@ -66,6 +66,7 @@ int DisjointSet :: Find(int node){
   while(set[index] > 0){
     index = set[index];
   }
+  // updating the parent's value in the set 
   while(node != index){
     currRoot = set[node];
     set[node] = index;

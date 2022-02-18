@@ -24,7 +24,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
       * [Intersection of Two Arrays](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/array_intersection.c)
       * [Union of Two Arrays](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/arrays_union.c)
       * [Shift](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/array_shift.c) [Merge](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/arrays_merge.c) and [Reverse](https://github.com/najm09/DataStructure/blob/master/Arrays/SetOperation/array_reverse.c) Operations on the Array
-### 2. [LinkList](https://github.com/najm09/DataStructure/tree/master/LinkedList)
+### 2. [LinkedList](https://github.com/najm09/DataStructure/tree/master/LinkedList)
    * #### [operationsOnLinkedList](https://github.com/najm09/DataStructure/tree/master/LinkedList/operationsOnLinkedList)
         * [Check for sorted list](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/checkSort.c)
         * [Loop detection in a list](https://github.com/najm09/DataStructure/blob/master/LinkedList/operationsOnLinkedList/loopDetection.c)
