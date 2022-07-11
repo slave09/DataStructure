@@ -51,7 +51,7 @@ int main(){
 	scanf("%d",&m.n);
 
 	//only need to store non-zero elements from the matrix as all other elements are going to be zero
-	//creating array dynamically of size of total number of non zero elements
+	//creating array dynamically of size p = total number of non zero elements
 
 	m.A=(int *)malloc(m.n*(m.n+1)/2*sizeof(int));
 

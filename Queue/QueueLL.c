@@ -1,7 +1,7 @@
 /*
 	* Author : Fakhra Najm.
 	* EMail  : fnajm09@gmail.com.
-	Implementation of queue using linkList.
+	Implementation of queue using linkedList.
 	* 1. enqueue
 	* 2. dequeue
 	* 3. printQ

@@ -1,6 +1,6 @@
 /*
   Author : Fakhra najm <fnajm09@gmail.com>
-  Operations on doubly LinkList
+  Operations on doubly LinkedList
   1. Create
   2. Display
   3. calculateLength
@@ -142,15 +142,15 @@ void PrintReverseList(struct Node * Head){
 int main(){
   int values[] = {1, 2, 3, 4, 5};
   CreateLinkList(values, 5);
-  printf("Created Link list:\n");
+  printf("Created linkedList:\n");
   PrintList(Head);
   printf("length:%d\n", calculateLength(Head) );
   InsertNode(Head, 5, 6);
-  printf("New linkList:\n");
+  printf("New linkedList:\n");
   PrintList(Head);
   printf("After deletion of value %d containing node:\n", removeValue(Head, 0));
   PrintList(Head);
-  printf("Reverse display of the link list\n");
+  printf("Reverse display of the linkedList\n");
   ReverseList(Head);
   PrintList(Head);
   return 0;

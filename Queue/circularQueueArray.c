@@ -34,7 +34,7 @@ void createQ(struct Queue *q){
 
 /*
 	* inserts the passed value in the circular queue
-	* @param q pointer to the que
+	* @param q pointer to the queue
 	* @param value to be inserted
 */
 
@@ -48,9 +48,9 @@ void enqueue(struct Queue *q, int value){
 }
 
 /*
-	* deletes the first inserted element from queue
+	* deletes the first inserted element from the queue
 	* @param q pointer to the Queue
-	* @return value deleted
+	* @return deleted value
 */
 
 int dequeue(struct Queue *q){
@@ -65,8 +65,7 @@ int dequeue(struct Queue *q){
 }
 
 /*
-	* prints the elements of circularQueue
-	* @param q name of created Queue 
+	* prints elements of the circular Queue
 */
 
 void printQ(struct Queue q){

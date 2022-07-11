@@ -1,8 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-//class of dynamic single dimensional array which will store the upper,
-//lower and main diagonal elements of the triDiagonal Matrix
+//array which will store the upper, lower and main diagonal elements of the triDiagonal Matrix
 
 struct Matrix{
 	int *A;
@@ -25,7 +24,7 @@ void Set(struct Matrix *m,int i,int j,int x)
 		m->A[2*m->n-1+i-1]=x;
 }
 
-//Get function will return upper,lower and main DIagonal elements from class of 1D array
+// Returns diagonal elements
 
 int Get(struct Matrix m,int i,int j)
 {
@@ -39,7 +38,7 @@ int Get(struct Matrix m,int i,int j)
 		return 0;
 }
 
-//printing the triDiagonal Matrix with the help of class of 1D array
+//prints the triDiagonal Matrix
 
 void Display(struct Matrix m)
 {

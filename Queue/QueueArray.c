@@ -2,7 +2,7 @@
 	* Author Fakhra Najm
 	* EMail  fnajm09@gmail.com
 
-	Queue implementation using Array
+	Implementation of Queue using Array
 	* 1. createQ
 	* 2. enqueue
 	* 3. dequeue
@@ -33,8 +33,8 @@ void createQ(struct Queue *q){
 }
 
 /*
-	* inserts the passed value in the last of queue
-	* @param q pointer to the que
+	* inserts the passed value in the queue
+	* @param q pointer to the queue
 	* @param value to be inserted
 */
 
@@ -48,9 +48,9 @@ void enqueue(struct Queue *q, int value){
 }
 
 /*
-	* deletes the first inserted element from queue
+	* deletes the front element from queue
 	* @param q pointer to the Queue
-	* @return value deleted
+	* @return deleted value
 */
 
 int dequeue(struct Queue *q){
@@ -66,7 +66,6 @@ int dequeue(struct Queue *q){
 
 /*
 	* prints the elements of Queue
-	* @param q name of created Queue 
 */
 
 void printQ(struct Queue q){

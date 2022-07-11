@@ -17,7 +17,7 @@ struct Node
 
 
 /**
- * creates a link list node
+ * creates a node
  * @param value to be inserted into node
  * @return node pointer to created node
  */
@@ -29,7 +29,7 @@ struct Node * createNode(int value) {
 }
 
 /**
- * creates a link list from given integer values
+ * Creates a linkedlist from given integer values
  * @param values from which linked list is to be created
  * @param length of given list of values
  */
@@ -48,8 +48,8 @@ void createLinkList(int values[],int length)
 
 /**
  * calculates sum of values of linked list nodes
- * @param head pointer to the head of linked linst
- * @return sum calculated sum of values of ll
+ * @param head pointer to the head of linked list
+ * @return sum calculated sum of values of Linkedlist
  */
 int calculateSum(struct Node *head)
 {
@@ -62,8 +62,8 @@ int calculateSum(struct Node *head)
 }
 
 /**
- * print values of a linked list
- * @param head pointer to the head of linked linst
+ * print values of a linkedlist
+ * @param head pointer to the head of linkedlist
  */
 void printList(struct Node *head)
 {
@@ -74,9 +74,9 @@ void printList(struct Node *head)
 }
 
 /**
- * finds maximum value from a linked list
- * @param head pointer to the head of linked linst
- * @return max value of ll
+ * finds maximum value from a linkedlist
+ * @param head pointer to the head of linkedlist
+ * @return max value of LinkedList
  */
 int findMax(struct Node *head)
 {
@@ -96,7 +96,7 @@ int main()
 	int values[] = { 8, 3, 7, 12, 9 };
 	createLinkList(values, 5);
 	printList(head);
-	printf("\nThe sum of all elements of linked list = %d ",calculateSum(head));
+	printf("\nThe sum of all elements of linkedlist = %d ",calculateSum(head));
 	printf("\nThe maxima of the list: %d",findMax(head));
 	return 0;
 }

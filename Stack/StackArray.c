@@ -20,8 +20,8 @@ struct stack{
 };
 
 /*
-	* inserts value in the stack array
-	* @param st pointer to the top pointer of stack
+	* inserts value in the stack
+	* @param st pointer to the top of stack
 	* @param value to be inserted
 */
 
@@ -36,7 +36,7 @@ void push(struct stack *st, int value){
 
 /*
 	* deletes the top value of the stack
-	* @param st pointer to the top pointer of stack
+	* @param st pointer to the top of stack
 	* @return removed value
 */
 
@@ -52,7 +52,6 @@ int pop(struct stack *st){
 }
 
 /*
-	* gives the element of stack at given index
 	* @param st calling stack
 	* @param index from which value is to be returned
 	* @return value at the given index
@@ -69,7 +68,6 @@ int peek(struct stack st, int index){
 }
 
 /*
-	* gives the element at the top
 	* @param st calling stack
 	* return value of the top
 */
@@ -84,8 +82,7 @@ int stackTop(struct stack st){
 }
 
 /*
-	* checks whether stack is full or not
-	* @return true or false
+	* @return whether stack is full or not
 */
 
 int isFull(struct stack st){
@@ -96,8 +93,7 @@ int isFull(struct stack st){
 }
 
 /*
-	* checks whether stack is empty or not
-	* @return true or false
+	* @return whether stack is empty or not
 */
 
 int isEmpty(struct stack st){

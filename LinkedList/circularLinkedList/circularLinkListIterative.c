@@ -1,6 +1,6 @@
 /*
   Author : Fakhra najm <fnajm09@gmail.com>
-  operations on singly circular linkList
+  operations on singly circular linkedList
   1. create
   2. display
   3. find length
@@ -18,7 +18,7 @@ struct Node{
 }*Head;
 
 /*
-  * creates the circular node for a linkList
+  * creates the circular node for a linkedList
   * @param value to be inserted into the node
   * @return node pointer to the created node
 */
@@ -31,8 +31,8 @@ struct Node * createCircularNode(int value){
 }
 
 /*
-  * creates the circular LinkList
-  * @param values from which linkList is to be created
+  * creates the circular LinkedList
+  * @param values from which linkedList is to be created
   * @param length of the given list of values
 */
 
@@ -50,9 +50,9 @@ void createLinkList(int values[], int length){
 }
 
 /*
-  * calculates the length of the CircularlinkList
-  * @param head pointer to the Head of the circularLinkList
-  * @return the length of the circularLinkList
+  * calculates the length of the CircularlinkedList
+  * @param head pointer to the Head of the circularLinkedList
+  * @return the length of the circularLinkedList
 */
 
 int calculateLength(struct Node * head){
@@ -65,8 +65,8 @@ int calculateLength(struct Node * head){
 }
 
 /*
-  * prints the values of circular LinkList
-  * @param head pointer to the Head of the linkList
+  * prints the values of circular LinkedList
+  * @param head pointer to the Head of the linkedList
 */
 
 void PrintList(struct Node * head){
@@ -79,9 +79,9 @@ void PrintList(struct Node * head){
 }
 
 /**
-  * inserts a new node in the linkList
-  * @param pointer to the Head of the circular LinkList
-  * @param index at which new node to be inserted
+  * inserts a new node in the linkedList
+  * @param pointer to the Head of the circular LinkedList
+  * @param index where new node is to be inserted
   * @param value to be inserted inside the new node
 */
 
@@ -110,8 +110,8 @@ void insertValue(struct Node * head, int index, int value){
 }
 
 /*
-  * removes the node from the circular LinkList
-  * @param current pointer to the Head of the linkList
+  * removes the node from the circular LinkedList
+  * @param current pointer to the Head of the linkedList
   * @param Prev_node pointer to the previous of the current node pointer
   * @param index from which node is to be deleted
   * @return the value of the deleted node.

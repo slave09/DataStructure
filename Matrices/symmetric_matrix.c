@@ -7,7 +7,7 @@ struct Matrix
 	int n;
 };
 
-//printing the symmetric matrix with the help of single dimensional array class Matrix
+//prints the symmetric matrix 
 
 void Display(struct Matrix m)
 {
@@ -23,7 +23,7 @@ void Display(struct Matrix m)
 	}
 }
 
-//setting all the elements of the symmetric matrix with the help of class Matrix having single dimensional array
+//stores all the upper triangular elements in the array
 //all the upper triangular elements are copied in lower triangular elements
 
 void Set(struct Matrix *m,int i,int j,int x)
@@ -34,7 +34,7 @@ void Set(struct Matrix *m,int i,int j,int x)
 		m->A[m->n*(j-1)-(j-1)*(j-2)/2+(i-1)]=x;
 }
 
-//get function will retrieve datas from array of class matrix 
+//Returns desired elements from the array
 //it will check if the given index lies in upper triangular part or not and then return elements from array
 //two times occuring elements are stored only once and it will return mirror image of the required index which is same as passed index
 
@@ -54,7 +54,7 @@ int main(){
 
 
 	//creating a single dimensional array so that the repeated elements are stored only once row by row 
-	//the size it the size of elments of upper triangular matrix
+	//the size the array is the size of elments of upper triangular matrix
 
 	m.A=(int *)malloc(m.n*(m.n+1)/2*sizeof(int));
 
@@ -70,7 +70,7 @@ int main(){
 
 	printf("\nAll symmetric elements are:\n");
 
-//printing all the elements which occurs twice in the given square symmetric matrix
+//prints all the elements which occurs twice in the given square symmetric matrix
 	for(i=1;i<=m.n;i++){
 		for(j=1;j<=m.n;j++){
 			if(i<=j)

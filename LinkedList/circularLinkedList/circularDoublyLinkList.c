@@ -1,6 +1,6 @@
 /*
   Author : Fakhra najm <fnajm09@gmail.com>
-  Operations on circularDoublyLinkList
+  Operations on circularDoublyLinkedList
   * 1. Create
   * 2. Display
   * 3. Insert

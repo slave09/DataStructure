@@ -14,8 +14,7 @@ void set(struct Matrix *m,int i,int j,int x){
 		m->A[(m->n*(j-1))+((j-1)*(j-2)/2)+(i-j)]=x;
 }
 
-//retreiving the data from the single dimensional array if index of row is greater than or
-//equal to column index otherwise ,it will return zero
+//retreiving the data from the single dimensional array if index of row is greater than or equal to column index otherwise ,it will return zero
 int get(struct Matrix m,int i,int j){
 	if(i>=j)
 		return m.A[(m.n*(j-1))+((j-1)*(j-2)/2)+(i-j)];
@@ -23,9 +22,8 @@ int get(struct Matrix m,int i,int j){
 		return 0;
 }
 
-//printing the matrix on the screen with the help of single dimensional array in heap 
-//if the row index is greater than or equal to column index then it will return elements
-//from created 1D array,otherwise it will print zero
+//prints the matrix on the screen with the help of single dimensional array in heap 
+//if the row index is greater than or equal to column index then it will return elements from created 1D array,otherwise it will print zero
 void Display(struct Matrix m){
 	int i,j;
 	for(i=1;i<=m.n;i++){

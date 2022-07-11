@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-//class Matrix of single dimensional array to store all the distinct elements in toeplitz matrix
-//Toeplitz matrix is the mtrix having all the same diagonal elements.
+// Toeplitz matrix is the matrix having all the same diagonal elements.
+// Toeplitz matrix uses single dimensional array to store all the distinct elements in the matrix
 
 struct Matrix
 {
@@ -11,7 +11,7 @@ struct Matrix
 };
 
 //elements of the first row lies in upper triangular Matrix while elements of first column lies in lower triangular matrix
-//setting all distinct elements which has entered as a matrix element in the array of class Matrix dynamically
+//setting all distinct elements in the array
 
 void Set(struct Matrix *m,int i,int j,int x )
 {
@@ -21,7 +21,7 @@ void Set(struct Matrix *m,int i,int j,int x )
 		m->A[m->n+(i-j)-1]=x;
 }
 
-//function to return all the elements of the toeplitz matrix with the help of array of class Matrix
+// @return the elements of the toeplitz matrix
 
 int Get(struct Matrix m,int i,int j)
 {
@@ -31,7 +31,7 @@ int Get(struct Matrix m,int i,int j)
 		return m.A[m.n+(i-j)-1];
 }
 
-//displaying all the elements of the matrix from array of class Matrix
+//Print distinct elements of the matrix
 
 void Display(struct Matrix m)
 {

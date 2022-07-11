@@ -6,9 +6,8 @@ struct  Matrices {
 	int n;
 };
 
- //printing the entire lower triangular matrix with the help of created 1D matrix and 
-//if row index is greater than or equal to column index, it print corresponding indix elememt 
-//from the created array,otherwise it will ptint zero
+//printing the entire lower triangular matrix with the help of 1D matrix
+//if row index is greater than or equal to column index, it prints corresponding index elememt from the created array,otherwise it will ptint zero
 
 void Display(struct Matrices m){
 	int i,j;
@@ -24,7 +23,7 @@ void Display(struct Matrices m){
 
 }
 
-//setting the non-zero elements in the created one dimensional array 
+//setting the non-zero elements in the one dimensional array 
 
 void set(struct Matrices *m,int i,int j,int x){
 	//non-zero elements is only present there where row index is greater than or equal to column index 
@@ -33,9 +32,9 @@ void set(struct Matrices *m,int i,int j,int x){
 		m->A[i*(i-1)/2+j-1]=x;
 }
 
-//returning the elments from the matrix with the help of created one dimensional array
+//returning the elments from the matrix with the help of one dimensional array
 int Get(struct Matrices m,int i,int j){
-	//non-zero elements are present if row index is greater than or equal to column index
+	//Check for non-zero elements 
 	if(i>=j)
 		return m.A[i*(i-1)/2+j-1];
 	else 
@@ -48,8 +47,7 @@ int main(){
 	printf("Enter dimmension:");
 	scanf("%d",&m.n);
 
-	//creating a single dimensional array dynamically to store all non zero elements from the
-	//matrix row by row
+	//creating a single dimensional array dynamically to store all non zero elements from the matrix row by row
 	//the size of the array is equal to the total number of non-zero elements in the matrix
 
 	m.A=(int *)malloc(m.n*(m.n+1)/2*sizeof(int));

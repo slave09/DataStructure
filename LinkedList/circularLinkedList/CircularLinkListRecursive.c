@@ -23,7 +23,7 @@ struct Node * createCircularNode(int value){
   return node;
 }
 /**
-* creates the circular linkList
+* creates the circular linkedList
 * @param value to be inserted into nodes
 * @param length of given list of values
 */
@@ -43,7 +43,7 @@ void createLinkList(int values[], int length){
 /**
 * prints values of the linkedlist recursively.
 * @param pointer to the head of the list .
-* if the last becomes head then the linkList has completed one round.
+* if the last becomes head then the linkedList has completed one round.
 * after one round all the list would have been printed and we have to stop. 
 */
 

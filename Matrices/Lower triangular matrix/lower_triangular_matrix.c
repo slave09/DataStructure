@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 //if column index is lesser than row index then elements are zero
-//if row is greater than or equal to column then that is the part of lower triangular matrix
+//if row is greater than or equal to column then that is the non zero part of lower triangular matrix
 
 int Display(int S[5][5],int n){
 	int i,j;

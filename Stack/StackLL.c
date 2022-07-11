@@ -1,7 +1,7 @@
 /*
 	Author Fakhra Najm
 	email : fnajm09@gmail.com
-	Stack implementation using LinkList
+	Implementation of Stack using LinkedList
 	* 1. push
 	* 2. pop
 	* 3. peek
@@ -16,7 +16,7 @@ struct stack{
 }*top =  NULL;
 
 /*
-	* inserts value inside the node of stack
+	* Inserts value in the stack
 	* @param value to be inserted
 */
 
@@ -32,7 +32,7 @@ void push(int value){
 }
 
 /*
-	* deletes the top value of the stack
+	* deletes top value of the stack
 	* @return deleted value
 */
 int pop(){
@@ -89,7 +89,7 @@ int isEmpty(){
 	return 0;
 }
 
-// prints linkList
+// prints linkedList
 
 void printStack(){
 	struct stack *node = top;

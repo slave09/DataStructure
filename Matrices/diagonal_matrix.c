@@ -15,7 +15,7 @@ void Set(struct Matrix *m,int i,int j,int x){
 		m->A[i-1]=x;
 }
 
-//function to retrieve an element from the matrix at any index
+//Retrieves an element from the matrix at any index
 
 int Get(struct Matrix m,int i,int j){
 	if(i==j)
@@ -23,7 +23,7 @@ int Get(struct Matrix m,int i,int j){
 	else return 0;
 }
 
-//displaying all the elements of the square matrix row by row
+//Prints all the elements of the square matrix row by row
 
 void Display(struct Matrix m){
 	int i,j;

@@ -6,9 +6,10 @@ struct  Matrices {
 	int n;
 };
 
-// the upper triangular matrix have all the elements in lower
-//triangular matrix as zero and the elements are only present
-//where row is less than or equal to column index
+/*
+	* In upper triangular matrix lower triangular elememts are all zeroes
+	* In upper triangular matrix row index is always less than or equal to column index
+*/
 
 void Display(struct Matrices m){
 	int i,j;
@@ -24,8 +25,7 @@ void Display(struct Matrices m){
 
 }
 
-//setting elements on the matrix if index of column is greater than 
-//the row index otherwise,the element is zero
+//Sets the elements on the matrix if index of column is greater than the row index otherwise,the element is zero
 
 void set(struct Matrices *m,int i,int j,int x){
 	if(i<=j)
@@ -35,10 +35,8 @@ void set(struct Matrices *m,int i,int j,int x){
 		m->A[j*(j-1)/2+(i-1)]=x;
 }
 
-//if the requested index for column is greater than requested index for row
-//then the get function will return data from single dimensional created array
-//otherwise it will return zero as lower triangular part is always zero of an upper
-//triangular matrix
+//if the requested index for column is greater than requested index for row then the get function will return data from single dimensional created array
+//otherwise it will return zero as in upper triangular matrix lower triangular part is always zero
 
 int Get(struct Matrices m,int i,int j){
 	if(i<=j)

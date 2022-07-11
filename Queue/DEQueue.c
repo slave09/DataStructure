@@ -2,7 +2,7 @@
 	Author Fakhra Najm
 	Email fnajm09@gmail.com
 	***********************
-	* DEQueue implementation using array
+	* Implementation of DEQueue using array
 */
 
 

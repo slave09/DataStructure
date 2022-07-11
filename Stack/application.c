@@ -83,9 +83,8 @@ int stackTop(){
 }
 
 /*
-	* checks whether correctly parenthesised or not
-	* @param expression pointer to the given expression
-	* @return true or false 
+	* checks valid parantheses 
+	* @param expression pointer to the given expression 
 */
 
 int checkmatch(char *expression){
@@ -107,7 +106,7 @@ int checkmatch(char *expression){
 		return 0;
 }
 
-// gives the precedence inside the stack
+// @return inside-precedence of the stack
 
 int inStack(char exp){
 	if(exp == '+' || exp == '-')
@@ -121,7 +120,7 @@ int inStack(char exp){
 	return 0;
 }
 
-// returns outside presedence of expression
+// @return outside-presedence of expression
 
 int outStack(char exp){
 	if(exp == '+' || exp == '-')
@@ -139,7 +138,6 @@ int outStack(char exp){
 /*
 	* checks whether expression is operand or not
 	* @param exp pointer to the given expression
-	* @return true or false
 */
 
 int isOperand(char exp){
@@ -161,7 +159,7 @@ int isOperand(char exp){
 		return 1;
 }
 
-// finding and returning the precedence order
+// @return precedence order
 
 int precedence(char exp){
 	if(exp == '+' || exp == '-')
@@ -174,7 +172,7 @@ int precedence(char exp){
 /*
 	* converts infix to postfix configuration
 	* @param infix pointer to expression to be converted
-	* @return postfix config of the passed infix_config
+	* @return postfix config
 */
 
 char * makePostfix(char * infix){

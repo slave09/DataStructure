@@ -1,16 +1,20 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-/*the polynomial representation can be done with the help of knowing coefficient ,exponent and the total number 
-terms that polynomial possess.now creating an object Term so that it will store information about the terms of the polynomial */
+/*
+  * the polynomial representation can be done with knowing coefficient ,exponent and the number of terms that polynomial possess
+ */
 
 struct Term{
   int coeff;
   int exponent;
 };
 
-/*creating a class of polynomial which gives information about the total number of the terms in the polynomial also posses a pointer 
-which points to the class Term containing coefficient and exponent */
+/*
+  * @class Polynomial
+  * @terms total number of terms in polynomial
+  * @t points to the array of Terms 
+*/
 
 struct Polynomial
 {
@@ -18,8 +22,6 @@ struct Polynomial
   struct Term *t;
   
 };
-
-/* creating polynomial with the help of the datas of the object Polynomial stored row by row and pointed by a pointer*/
 
 void Create_polynomial(struct Polynomial *p){
   int i,j;
@@ -39,7 +41,7 @@ void Create_polynomial(struct Polynomial *p){
   
 }
 
-/*Displaying the polynomial on the screen by retrieving data through the array object POlynomial*/
+/*Prints the polynomial on the screen by retrieving data through the array */
 
 void Display(struct Polynomial p)
 {
@@ -54,9 +56,9 @@ void Display(struct Polynomial p)
 about the polynomial row by row *************************************************************************
 
 
-firstly,i'm comparing the exponents of the two polynomial stored in two different array od structure
+firstly,i'm comparing the exponents of the two polynomial stored in two different array of structure
 
-1 . if both the exponents are equal then we are going to store the exponent in the new created array int he
+1 . if both the exponents are equal then we are going to store the exponent in the new created array in the
 row of exponent in the resulted array of Polynomial and add the two corresponding coefficients
 
 2 . if one of the exponent is greater ,then we'll be storing the datas from that array whose exponent is greater
@@ -72,7 +74,7 @@ struct Polynomial * Add(struct Polynomial *p1,struct Polynomial *p2)
 
   struct Polynomial *result=(struct Polynomial*)malloc(sizeof(struct Polynomial));
 
-/*the size of the created array to store result is initially assumed to be the sum of the number of terms in both the Polynomial */
+// the size of the created array to store result is initially assumed to be the sum of the number of terms in both the Polynomial 
 
   result->t=(struct Term *)malloc(p1->terms+p2->terms*sizeof(struct Term));
 
