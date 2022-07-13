@@ -70,6 +70,10 @@ This Repository is based on the course of **"Mastering Data structures and Algor
   * [Binary indexed tree](https://github.com/najm09/DataStructure/blob/master/Advanced/binaryIndexTree.cpp)
 
 ----------------------------------------------------------------------------------------------------------------
+## Contribution:
+#### This repository is open for pull requests. 
+##### There is always scope of errors and mistakes. Pull requests are always appreciated.
+----------------------------------------------------------------------------------------------------------------
 ## Contributors:
  *  **[Fakhra Najm](https://github.com/najm09)** fnajm09@gmail.com
  * **[Md Sharique Shahab](https://github.com/shariquesha)** shariqueshahab@gmail.com
