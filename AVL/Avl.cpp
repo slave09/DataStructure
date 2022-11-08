@@ -167,7 +167,7 @@ TreeNode * AVL :: LR_Rotation(TreeNode *root){
 }
 
 TreeNode * AVL :: RL_Rotation(TreeNode *root){
-	root -> right = LL_Rotation(root -> left);
+	root -> right = LL_Rotation(root -> right);
 	return RR_Rotation(root);
 }
 
