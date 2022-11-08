@@ -68,11 +68,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
 ### 11. [Graph](https://github.com/najm09/DataStructure/tree/master/Graph)
 ### 12. [Advanced](https://github.com/najm09/DataStructure/tree/master/Advanced)
   * [Binary indexed tree](https://github.com/najm09/DataStructure/blob/master/Advanced/binaryIndexTree.cpp)
-
-----------------------------------------------------------------------------------------------------------------
-## Contribution:
-#### This repository is open for pull requests. 
-##### There is always scope of errors and mistakes. Pull requests are always appreciated.
+  * [Trie](https://github.com/najm09/DataStructure/blob/master/Advanced/Trie.cpp)
 ----------------------------------------------------------------------------------------------------------------
 ## Contributors:
  *  **[Fakhra Najm](https://github.com/najm09)** fnajm09@gmail.com
