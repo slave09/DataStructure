@@ -66,7 +66,7 @@ This Repository is based on the course of **"Mastering Data structures and Algor
   * [Quadratic Probing](https://github.com/najm09/DataStructure/blob/master/HashTable/quadraticProbing.cpp)
   * [Double Hashing](https://github.com/najm09/DataStructure/blob/master/HashTable/doubleHashing.cpp)
 ### 11. [Graph](https://github.com/najm09/DataStructure/tree/master/Graph)
-### 12. [Advanced](https://github.com/najm09/DataStructure/tree/master/Advanced)
+### 12. [Advanced : Not in Course](https://github.com/najm09/DataStructure/tree/master/Advanced)
   * [Binary indexed tree](https://github.com/najm09/DataStructure/blob/master/Advanced/binaryIndexTree.cpp)
   * [Trie](https://github.com/najm09/DataStructure/blob/master/Advanced/Trie.cpp)
 ----------------------------------------------------------------------------------------------------------------
