@@ -136,6 +136,5 @@ int main(){
 	printf("stack is empty\n");
 	else
 	printf("stack is not empty\n");
-
 	return 0;
 }

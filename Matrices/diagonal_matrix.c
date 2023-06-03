@@ -1,7 +1,6 @@
 #include<stdio.h>
 
 //creating a class of one dimensional array to store all the diagonal elements of any square diagonal matrix
-
 struct Matrix
 {
 	int A[10];
@@ -9,14 +8,12 @@ struct Matrix
 };
 
 //set is to insert the diagonal elements inside the matrix
-
 void Set(struct Matrix *m,int i,int j,int x){
 	if(i==j)
 		m->A[i-1]=x;
 }
 
 //Retrieves an element from the matrix at any index
-
 int Get(struct Matrix m,int i,int j){
 	if(i==j)
 		printf("%d\n",m.A[i-1]);
@@ -24,7 +21,6 @@ int Get(struct Matrix m,int i,int j){
 }
 
 //Prints all the elements of the square matrix row by row
-
 void Display(struct Matrix m){
 	int i,j;
 	for(i=0;i<m.n;i++){

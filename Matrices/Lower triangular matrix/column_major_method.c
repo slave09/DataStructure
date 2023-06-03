@@ -9,7 +9,6 @@ struct Matrix {
 //set function will set the non-zero elements in the single dimensional array from the given matrix
 void set(struct Matrix *m,int i,int j,int x){
 	if(i>=j)
-
 		//copying non-zero elements from the lower triangular matrix column by column in the created single dimensional array 
 		m->A[(m->n*(j-1))+((j-1)*(j-2)/2)+(i-j)]=x;
 }

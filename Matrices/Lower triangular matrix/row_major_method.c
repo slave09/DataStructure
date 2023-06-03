@@ -18,7 +18,7 @@ void Display(struct Matrices m){
 			else
 				printf("0 ");
 		}
-			printf("\n");
+		printf("\n");
 	}
 
 }
@@ -38,7 +38,7 @@ int Get(struct Matrices m,int i,int j){
 	if(i>=j)
 		return m.A[i*(i-1)/2+j-1];
 	else 
-		return 0;
+	return 0;
 }
 
 int main(){
