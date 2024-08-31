@@ -72,4 +72,3 @@ This Repository is based on the course of **"Mastering Data structures and Algor
 ----------------------------------------------------------------------------------------------------------------
 ## Contributors:
  *  **[Fakhra Najm](https://github.com/najm09)** fnajm09@gmail.com
- * **[Md Sharique Shahab](https://github.com/shariquesha)** shariqueshahab@gmail.com
