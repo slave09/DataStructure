@@ -1,7 +1,4 @@
 /**
-  Author: Sharique
-  email: shariqueshahab@gmail.com
-
   Buid binary indexed tree using Array
 
   Use case: Range queries
