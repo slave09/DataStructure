@@ -8,6 +8,6 @@ int print_recursive(int a[],int n,int i)
 int main()
 {
 	int a[]={1,2,3,4,5,6,7,8,9,10};
-	printf("%d", print_recursive(a,10,0,0));
+	printf("%d", print_recursive(a,10,0));
 	return 0;
-} 
+}
