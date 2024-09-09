@@ -39,7 +39,7 @@ void createQ(struct Queue *q){
 */
 
 void enqueue(struct Queue *q, int value){
-	else if(q->rear == q->size-1)
+	if(q->rear == q->size-1)
 		printf("Queue is full\n");
 	else{
 		q->rear ++;

@@ -85,7 +85,7 @@ struct Node *Delete(struct Node *node, int key){
   struct Node *temp;
   if(node == NULL) 
     return NULL;
-  if(!node->left && ! node->right && nodes -> data == key){
+  if(!node->left && ! node->right && node -> data == key){
     if(node == root)
       root = NULL;
     free(node);
